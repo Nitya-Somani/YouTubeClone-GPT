@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import FilterButton from "./FilterButton";
 
 const ButtonList = () => {
   return (
-    <div>ButtonList</div>
-  )
-}
+    <div>
+      <FilterButton />
+    </div>
+  );
+};
 
-export default ButtonList
+export default ButtonList;

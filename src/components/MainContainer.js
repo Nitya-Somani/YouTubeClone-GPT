@@ -1,14 +1,19 @@
+import { useSelector } from "react-redux";
 import ButtonList from "./ButtonList";
 import VideoContainer from "./VideoContainer";
 
-const Maincontainer = () =>{
-    return (
-        <div className="col-span-11">
-        <h1>Main container</h1>
-      <ButtonList/>
-      <VideoContainer/>
-        </div>
-    )
-}
+const Maincontainer = () => {
+  const sideBarToggle = useSelector((store) => store.app.isMenuOpen);
+  const mainClass = `${
+    sideBarToggle ? "absolute left-56 ml-8 bg-white" : "absolute left-12 ml-8"
+  }`;
+
+  return (
+    <div className={mainClass}>
+      <ButtonList />
+      <VideoContainer />
+    </div>
+  );
+};
 
 export default Maincontainer;

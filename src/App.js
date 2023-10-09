@@ -10,7 +10,8 @@ function App() {
     <BrowserRouter>
       <Provider store={store}>
         <div className="App">
-          <Header />
+           <Header /> 
+         
           <Body />
         </div>
       </Provider>
