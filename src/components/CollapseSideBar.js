@@ -1,0 +1,41 @@
+import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faBolt, faTv, faVideo } from "@fortawesome/free-solid-svg-icons";
+
+const CollapseSideBar = () => {
+  return (
+    <aside className="bg-gray-900 text-white w-20 p-1 h-screen fixed top-18 left-0 overflow-y-auto">
+      <ul className="space-y-2">
+        <li className="flex flex-col items-center space-x-4 cursor-pointer hover:bg-gray-800 p-2 rounded h-18">
+          <div className="flex items-center flex-col m-2">
+            <FontAwesomeIcon className="text-xl" icon={faHome} />
+            <span className='text-xs mt-2 text-center'>Home</span>
+          </div>
+        </li>
+
+        <li className="flex flex-col items-center space-x-4 cursor-pointer hover:bg-gray-800 p-2 rounded h-18">
+          <div className="flex items-center flex-col m-1">
+            <FontAwesomeIcon className="text-xl" icon={faBolt} />
+            <span className='text-xs mt-2 text-center'>Shorts</span>
+          </div>
+        </li>
+
+        <li className="flex flex-col items-center space-x-4 cursor-pointer hover:bg-gray-800 p-2 rounded h-18">
+          <div className="flex items-center flex-col m-1">
+            <FontAwesomeIcon className="text-xl" icon={faTv} />
+            <span className='text-xs mt-2 text-center'>Subscriptions</span>
+          </div>
+        </li>
+
+        <li className="flex flex-col items-center space-x-4 cursor-pointer hover:bg-gray-800 p-2 rounded h-18">
+          <div className="flex items-center flex-col m-1">
+            <FontAwesomeIcon className="text-xl" icon={faVideo} />
+            <span className='text-xs mt-2 text-center'>Videos</span>
+          </div>
+        </li>
+      </ul>
+    </aside>
+  )
+}
+
+export default CollapseSideBar;
