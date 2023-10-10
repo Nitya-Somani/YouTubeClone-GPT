@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../StoreSlices/appSlice";
-import { Link } from "react-router-dom";
+
 import { toggleTheme } from "../StoreSlices/themeSlice";
 
 const Header = () => {
