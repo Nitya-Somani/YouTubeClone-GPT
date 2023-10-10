@@ -19,8 +19,9 @@ const Header = () => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
 
   return (
-    <header className={`  shadow-lg p-2 ${theme ? "bg-gray-900 text-white": "bg-slate-50 text-black"} `}>
-      <div className="container mx-auto flex items-center justify-between">
+    <header className={`  fixed top-0 left-0 right-0 z-50  shadow-lg p-2 ${theme ? "bg-gray-900 text-white": "bg-slate-50 text-black"} `}>
+      
+      <div className="container mx-auto flex items-center justify-between ">
         <div className="flex items-center w-1/6">
           <button
             className="mr-4 p-2 h-12 focus:outline-none"
@@ -28,13 +29,13 @@ const Header = () => {
           >
             <FontAwesomeIcon icon={faBars} className="text-gray-400" />
           </button>
-          <Link to="/">
+          {/* <Link to="/"> */}
             <img
               className="h-12"
               src={theme ? "/youTube-Header-logo.png" : "/youTubeLogo.jpg"}
               alt="youtube-logo"
             />
-          </Link>
+          {/* </Link> */}
         </div>
 
         <div className="w-1/2">
