@@ -35,12 +35,6 @@ const SideBar = () => {
     return <CollapseSideBar />;
   }
 
- 
-
-
-  
- 
-
   const listItems = `flex items-center space-x-4 cursor-pointer  p-2 rounded ${theme ? "hover:bg-gray-800" :"hover:bg-gray-300"}`;
   return (
     <aside className= {`fixed top-16  z-50  w-64 p-4 h-screen   left-0 overflow-y-auto ${theme ? "bg-gray-900 text-white" :"bg-white text-black"}`}>
