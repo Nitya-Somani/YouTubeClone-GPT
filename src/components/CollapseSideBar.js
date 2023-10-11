@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faBolt, faTv, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 const CollapseSideBar = () => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
   const containerClasses = `  bg-${theme ? 'gray-900' : 'slate-50'} text-${theme ? 'white' : 'black'}`;
@@ -11,12 +11,12 @@ const CollapseSideBar = () => {
   return (
     <aside className={` fixed top-16  z-50 w-20 p-1 h-screen  top-18 left-0 overflow-y-auto ${containerClasses}`}>
       <ul className="space-y-2">
-        <li className={listItemClasses}>
+      <Link to ="/"> <li className={listItemClasses}>
           <div className="flex items-center flex-col m-2">
             <FontAwesomeIcon className="text-xl" icon={faHome} />
             <span className='text-xs mt-2 text-center'>Home</span>
           </div>
-        </li>
+        </li></Link>
 
         <li className={listItemClasses}>
           <div className="flex items-center flex-col m-1">

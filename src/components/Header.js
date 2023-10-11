@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../StoreSlices/appSlice";
-
 import { toggleTheme } from "../StoreSlices/themeSlice";
+
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -18,6 +18,10 @@ const Header = () => {
 
   const theme = useSelector((store) => store.theme.isDarkTheme);
 
+
+   
+  
+
   return (
     <header className={`  fixed top-0 left-0 right-0 z-50  shadow-lg p-2 ${theme ? "bg-gray-900 text-white": "bg-slate-50 text-black"} `}>
       
@@ -29,13 +33,15 @@ const Header = () => {
           >
             <FontAwesomeIcon icon={faBars} className="text-gray-400" />
           </button>
-          {/* <Link to="/"> */}
+       
+          <a href="https://youtube-clone-viewtube.netlify.app/">
             <img
               className="h-12"
               src={theme ? "/youTube-Header-logo.png" : "/youTubeLogo.jpg"}
               alt="youtube-logo"
             />
-          {/* </Link> */}
+            </a>
+       
         </div>
 
         <div className="w-1/2">
