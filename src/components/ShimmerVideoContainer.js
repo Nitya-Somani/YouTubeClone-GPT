@@ -1,5 +1,5 @@
-import React from 'react';
-import ShimmerVideoCard from './ShimmerVideoCard';
+import React from "react";
+import ShimmerVideoCard from "./ShimmerVideoCard";
 
 const ShimmerVideoContainer = () => {
   const shimmerCards = [];
@@ -8,7 +8,7 @@ const ShimmerVideoContainer = () => {
     shimmerCards.push(<ShimmerVideoCard key={i} />);
   }
 
-  return <div className='flex flex-wrap mt-28 '>{shimmerCards}</div>;
+  return <div className="flex flex-wrap mt-28 ">{shimmerCards}</div>;
 };
 
 export default ShimmerVideoContainer;

@@ -25,9 +25,7 @@ import { useSelector } from "react-redux";
 import CollapseSideBar from "./CollapseSideBar";
 import { Link } from "react-router-dom";
 
-
 const SideBar = () => {
-  
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   const theme = useSelector((store) => store.theme.isDarkTheme);
 
@@ -35,14 +33,23 @@ const SideBar = () => {
     return <CollapseSideBar />;
   }
 
-  const listItems = `flex items-center space-x-4 cursor-pointer  p-2 rounded ${theme ? "hover:bg-gray-800" :"hover:bg-gray-300"}`;
+  const listItems = `flex items-center space-x-4 cursor-pointer  p-2 rounded ${
+    theme ? "hover:bg-gray-800" : "hover:bg-gray-300"
+  }`;
   return (
-    <aside className= {`fixed top-16  z-50  w-64 p-4 h-screen   left-0 overflow-y-auto ${theme ? "bg-gray-900 text-white" :"bg-white text-black"}`}>
+    <aside
+      className={`fixed top-16  z-50  w-64 p-4 h-screen   left-0 overflow-y-auto ${
+        theme ? "bg-gray-900 text-white" : "bg-white text-black"
+      }`}
+    >
       <ul className="space-y-2">
-      <Link to ="/"> <li className= {listItems}>
-         <FontAwesomeIcon icon={faHome} />
-        <span>Home</span>
-        </li></Link>
+        <Link to="/">
+          {" "}
+          <li className={listItems}>
+            <FontAwesomeIcon icon={faHome} />
+            <span>Home</span>
+          </li>
+        </Link>
         <li className={listItems}>
           <FontAwesomeIcon icon={faFire} />
           <span>Trending</span>

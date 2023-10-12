@@ -5,16 +5,16 @@ import Footer from "./Footer";
 
 const MainContainer = () => {
   const sideBarToggle = useSelector((store) => store.app.isMenuOpen);
-  
+
   const mainClass = `${
     sideBarToggle ? "absolute left-56 ml-8 bg-white " : "absolute left-12 ml-8"
   }`;
 
   return (
-    <div className={mainClass} >
+    <div className={mainClass}>
       <ButtonList />
       <VideoContainer />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

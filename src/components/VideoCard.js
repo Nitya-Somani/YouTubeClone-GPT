@@ -4,7 +4,6 @@ import { formatDistanceToNow } from "date-fns";
 import { useSelector } from "react-redux";
 
 const VideoCard = ({ info }) => {
-  
   const theme = useSelector((store) => store.theme.isDarkTheme);
   if (!info || !info.snippet) {
     return null;
@@ -18,12 +17,13 @@ const VideoCard = ({ info }) => {
   const publishedAt = new Date(snippet.publishedAt);
   const formattedDate = formatDistanceToNow(publishedAt, { addSuffix: true });
 
-
-  
-
   return (
-    <div className={`${theme ? "bg-gray-900 text-white" : "bg-white text-black"} rounded-lg overflow-hidden shadow-lg  m-2 `} style ={{width:"24rem"}}>
-
+    <div
+      className={`${
+        theme ? "bg-gray-900 text-white" : "bg-white text-black"
+      } rounded-lg overflow-hidden shadow-lg  m-2 `}
+      style={{ width: "24rem" }}
+    >
       <img
         src={thumbnails.medium.url}
         alt={title}
@@ -36,14 +36,20 @@ const VideoCard = ({ info }) => {
           className="w-12 h-12 rounded-full mr-2"
         />
         <div>
-          <h3 className="text-lg font-semibold line-clamp-2">
-            {title} 
-          </h3>
-          <p className={theme ? "text-gray-400 text-sm" : "text-gray-900 text-sm"}>{channelTitle}</p>
+          <h3 className="text-lg font-semibold line-clamp-2">{title}</h3>
+          <p
+            className={
+              theme ? "text-gray-400 text-sm" : "text-gray-900 text-sm"
+            }
+          >
+            {channelTitle}
+          </p>
 
-
-          <div className={`flex items-center text-sm mt-1 ${theme ? "text-gray-400" : "text-gray-900"}`}>
-
+          <div
+            className={`flex items-center text-sm mt-1 ${
+              theme ? "text-gray-400" : "text-gray-900"
+            }`}
+          >
             <span>{formattedViews}</span>
             <span className="mx-2">•</span>
             <span>{formattedDate}</span>
