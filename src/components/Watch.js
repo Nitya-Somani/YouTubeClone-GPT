@@ -1,7 +1,6 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import CollapseSideBar from "./CollapseSideBar";
+
 
 const Watch = () => {
   const paramsQuery = useSearchParams();
