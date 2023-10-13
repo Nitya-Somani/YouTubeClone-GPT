@@ -10,7 +10,8 @@ const Watch = () => {
 
   useEffect(() => {
     dispatch(closeMenu());
-  });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div style={{ margin: "5.5rem" }}>
