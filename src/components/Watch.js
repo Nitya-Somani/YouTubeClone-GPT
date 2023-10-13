@@ -10,7 +10,7 @@ const Watch = () => {
 
   useEffect(() => {
     dispatch(closeMenu());
-  }, []);
+  });
 
   return (
     <div style={{ margin: "5.5rem" }}>
