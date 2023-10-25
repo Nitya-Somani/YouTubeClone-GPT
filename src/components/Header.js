@@ -74,7 +74,7 @@ const Header = () => {
             }}
           >
             {" "}
-            {theme ? "🌟🌛" : "⛅ ⛱️"}{" "}
+            {theme ? "DARK🌛" : "LIGHT ⛅"}{" "}
           </button>
 
           <button className="p-2 focus:outline-none">

@@ -25,11 +25,15 @@ import { useSelector } from "react-redux";
 import CollapseSideBar from "./CollapseSideBar";
 import { Link } from "react-router-dom";
 
+
 const SideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+ 
   const theme = useSelector((store) => store.theme.isDarkTheme);
 
-  if (!isMenuOpen) {
+ 
+
+   if (!isMenuOpen ) {
     return <CollapseSideBar />;
   }
 

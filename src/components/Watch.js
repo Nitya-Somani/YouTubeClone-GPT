@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import { closeMenu } from "../StoreSlices/appSlice";
+import { closeMenu ,isHome} from "../StoreSlices/appSlice";
 
 const Watch = () => {
   const paramsQuery = useSearchParams();
@@ -10,6 +10,7 @@ const Watch = () => {
 
   useEffect(() => {
     dispatch(closeMenu());
+   
       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

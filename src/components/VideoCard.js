@@ -50,7 +50,7 @@ const VideoCard = ({ info }) => {
               theme ? "text-gray-400" : "text-gray-900"
             }`}
           >
-            <span>{formattedViews}</span>
+            <span>{formattedViews} views</span>
             <span className="mx-2">•</span>
             <span>{formattedDate}</span>
           </div>
