@@ -8,10 +8,7 @@ const VideoCard = ({ info }) => {
   if (!info || !info.snippet) {
     return null;
   }
-
-  console.log(info);
   const { snippet, statistics } = info;
-
   const { channelTitle, title, thumbnails } = snippet;
   const formattedViews = numeral(statistics.viewCount).format("0.0a");
   const publishedAt = new Date(snippet.publishedAt);
