@@ -1,8 +1,10 @@
 import React from "react";
+import Loader from "./Loader";
 
 const ShimmerHeader = () => {
   return (
     <header className="bg-gray-900 text-white shadow-lg p-2">
+         <Loader/>
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center w-1/6">
           <svg

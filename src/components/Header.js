@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../StoreSlices/appSlice";
 import { toggleTheme } from "../StoreSlices/themeSlice";
 
+
 const Header = () => {
   const dispatch = useDispatch();
   const toggleHandlerMenu = () => {
@@ -20,6 +21,9 @@ const Header = () => {
         theme ? "bg-gray-900 text-white" : "bg-slate-50 text-black"
       } `}
     >
+      
+   
+      
       <div className="container mx-auto flex items-center justify-between ">
         <div className="flex items-center w-1/6">
           <button
@@ -85,7 +89,9 @@ const Header = () => {
           </button>
         </div>
       </div>
+    
     </header>
+   
   );
 };
 
