@@ -1,12 +1,18 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faUser, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../StoreSlices/appSlice";
 import { toggleTheme } from "../StoreSlices/themeSlice";
-
+import useShowSuggestion from "../utils/useShowSuggestions";
 
 const Header = () => {
+  const {
+    searchQuery,
+    suggestions,
+    showSuggestions,
+    handleSearchQueryChange,
+    hideSuggestions,
+  } = useShowSuggestion();
   const dispatch = useDispatch();
   const toggleHandlerMenu = () => {
     dispatch(toggleMenu());
@@ -15,15 +21,13 @@ const Header = () => {
     dispatch(toggleTheme());
   };
   const theme = useSelector((store) => store.theme.isDarkTheme);
+
   return (
     <header
       className={`  fixed top-0 left-0 right-0 z-50  shadow-lg p-2 ${
         theme ? "bg-gray-900 text-white" : "bg-slate-50 text-black"
       } `}
     >
-      
-   
-      
       <div className="container mx-auto flex items-center justify-between ">
         <div className="flex items-center w-1/6">
           <button
@@ -53,6 +57,10 @@ const Header = () => {
                   : "bg-white  text-black border-gray-400"
               }`}
               placeholder="Search"
+              value={searchQuery}
+              onChange={(e) => handleSearchQueryChange(e.target.value)}
+              onFocus={() => handleSearchQueryChange(searchQuery)}
+              onBlur={hideSuggestions}
             />
             <button
               id="search-icon-legacy"
@@ -63,8 +71,30 @@ const Header = () => {
               }`}
               aria-label="Search"
             >
-              🔍
+              <FontAwesomeIcon icon={faSearch} />
             </button>
+            {showSuggestions && (
+              <div
+                className={`fixed ${
+                  theme
+                    ? "bg-gray-900 text-white border-gray-700 "
+                    : "bg-slate-50 text-black border-gray-100 "
+                } mt-1 py-2 border rounded-lg z-100 w-[44.5rem] shadow-lg`}
+              >
+                <ul>
+                  {suggestions.map((s) => (
+                    <li
+                      key={s}
+                      className={`${
+                        theme ? "hover:bg-gray-600" : "hover-bg-gray-200"
+                      } py-1 px-3 cursor-pointer`}
+                    >
+                      <FontAwesomeIcon icon={faSearch} /> &nbsp;&nbsp;{s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
 
@@ -89,9 +119,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-    
     </header>
-   
   );
 };
 

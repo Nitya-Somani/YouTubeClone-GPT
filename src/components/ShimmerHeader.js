@@ -9,15 +9,15 @@ const ShimmerHeader = () => {
         <div className="flex items-center w-1/6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class=" text-gray-700 animate-pulse mr-4 p-2 h-12 w-12 "
+            className=" text-gray-700 animate-pulse mr-4 p-2 h-12 w-12 "
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M4 6h16M4 12h16M4 18h16"
             ></path>
           </svg>
