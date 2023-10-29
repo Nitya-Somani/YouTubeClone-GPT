@@ -27,6 +27,15 @@ I  welcome your contributions! Whether it's pull requests, bug reports, or new f
 
 
 Acknowledgments 🙏
-We're grateful to YouTube and other video-sharing platforms for inspiring this project. Thanks for their dedication to creating great user experiences and vibrant online communities.
+
+I am  grateful to YouTube and other video-sharing platforms for inspiring this project. Thanks for their dedication to creating great user experiences and vibrant online communities.
+
+React.js: For providing the dynamic, responsive, and user-friendly foundation upon which our YouTube clone is built. React.js empowers us to create rich, interactive user interfaces, making the viewing experience a true delight.
+
+Redux: Our loyal companion in state management. Redux enables us to maintain a clean, predictable, and scalable data flow, ensuring that our application runs smoothly and efficiently.
+
+Tailwind CSS: The design wizardry that shapes the visual elegance of our YouTube clone. Tailwind CSS allows us to craft a sleek and intuitive user interface, offering a seamless and captivating experience to our users.
+
+I  deeply appreciate the creators and contributors of these remarkable tools for their dedication to advancing the art of web development. Together, they have made mine YouTube clone project possible and have enriched the lives of our users.
 
 Enjoy your YouTube clone adventure! If you have any questions or run into issues, feel free to reach out for support. Happy coding! 🎉👩‍💻👨‍💻
