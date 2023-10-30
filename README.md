@@ -16,19 +16,19 @@ Welcome to our YouTube clone project! 🚀 Get ready to explore its awesome feat
 
 6.Network Status Notification 🌐: If your network connection drops, we'll gently notify you, so you're always in the know.
 
-### Currently Building - 
+## Currently Building - 
 
 1.Search Functionality 🔍: Find videos and channels easily using the search bar at the top. Just type in your query, and voila! You'll have results at your fingertips.
 
 
-#### Demo Link - https://youtube-clone-viewtube.netlify.app/
+## Demo Link - https://youtube-clone-viewtube.netlify.app/
 
-#### Contributing 🤝
+## Contributing 🤝
 
 I  welcome your contributions! Whether it's pull requests, bug reports, or new feature ideas, I  appreciate your help in making this project even better. Let's build together! 🛠️
 
 
-#### Acknowledgments 🙏
+## Acknowledgments 🙏
 
 I am  grateful to YouTube and other video-sharing platforms for inspiring this project. Thanks for their dedication to creating great user experiences and vibrant online communities.
 

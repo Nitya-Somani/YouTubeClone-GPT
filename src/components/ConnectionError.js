@@ -2,7 +2,7 @@ import React from 'react'
 
 const ConnectionError = () => {
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center h-screen ">
     <div className="bg-gray-500 rounded-lg p-8">
       <b className="text-3xl text-white">Connection Error !! 😔</b>
     
