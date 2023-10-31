@@ -16,9 +16,15 @@ Welcome to our YouTube clone project! 🚀 Get ready to explore its awesome feat
 
 6.Network Status Notification 🌐: If your network connection drops, we'll gently notify you, so you're always in the know.
 
+7.Search Functionality 🔍: Find videos and channels easily using the search bar at the top. Just type in your query, and voila! You'll have results at your fingertips.
+
+8.Arrow Key and Enter Key Navigation ⬆️⬇️: Users can navigate through the search results using arrow keys, which is a helpful feature for users who prefer keyboard shortcuts. When they find the desired result, they can select it using the Enter key.
+
+9.Search Results Caching📦: I've introduced a powerful caching system within our search functionality. This enhancement ensures that frequently requested search results are cached, leading to faster response times and a more responsive search experience.
+
 ## Currently Building - 
 
-1.Search Functionality 🔍: Find videos and channels easily using the search bar at the top. Just type in your query, and voila! You'll have results at your fingertips.
+1. Nested comments : currently in process ...
 
 
 ## Demo Link - https://youtube-clone-viewtube.netlify.app/
