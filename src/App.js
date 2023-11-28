@@ -9,18 +9,19 @@ import MainContainer from "./components/MainContainer";
 import Watch from "./components/Watch";
 import useFetchVideos from "./utils/useFetchVideos";
 import Shimmer from "./components/Shimmer";
+import Login from "./components/Login";
+import Browse from "./components/Browse";
 
 
 function App() {
   const videos = useFetchVideos();
-
+  const isLoginPage = window.location.pathname === "/Login";
   if (videos === null) return <Shimmer />;
 
   return (
     <Provider store={store}>
-      <div className="App">
-        
-        <Header />
+      <div className="App">        
+        {!isLoginPage && <Header />}
         <RouterProvider router={appRouter} />
       </div>
     </Provider>
@@ -32,6 +33,16 @@ const appRouter = createBrowserRouter([
     path: "/",
     element: <Body />,
     children: [
+      {
+        path: "/Login",
+        element: <Login />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/Browse",
+        element: <Browse />,
+        errorElement: <Error />,
+      },
       {
         path: "/",
         element: <MainContainer />,
