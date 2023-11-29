@@ -8,9 +8,10 @@ const ButtonList = () => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
   return (
     <div className={`fixed top-16     flex ${theme ? "bg-gray-900 text-white" : "bg-white text-black"}`} style={{width:"92rem"}}>
-    {mapButtons.map((buttonName,index)=>(
-      <FilterButton key={index} name={buttonName}/>  
-    ))}
+{mapButtons.map((buttonName) => (
+  <FilterButton key={buttonName} name={buttonName} />
+))}
+
     
     </div>
   );
