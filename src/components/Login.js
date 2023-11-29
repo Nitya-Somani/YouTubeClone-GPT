@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import checkValidateData from "../utils/validate";
+import handleAuthentication from "../utils/handleAuthentication";
+import { auth } from "../utils/firebase";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -12,13 +14,27 @@ const Login = () => {
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-  const handleBtnClick = () => {
+
+  const handleBtnClick = async () => {
     const validateMsg = checkValidateData(
       email.current.value,
-      password.current.value,
-      name.current.value
+      password.current.value
     );
     setErrorMessage(validateMsg);
+
+    if (validateMsg) return;
+
+    try {
+      const user = await handleAuthentication(
+        auth,
+        email.current.value,
+        password.current.value,
+        !isSignIn
+      );
+      console.log(user);
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
   };
   return (
     <div className="h-screen w-full relative flex items-center justify-center">
@@ -35,7 +51,7 @@ const Login = () => {
           {isSignIn ? " Sign In " : " Sign Up "}
         </h4>
 
-        {isSignIn && (
+        {!isSignIn && (
           <input
             ref={name}
             type="text"
