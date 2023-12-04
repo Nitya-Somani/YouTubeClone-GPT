@@ -1,47 +1,44 @@
 import React, { useEffect } from "react";
-import {  useSelector ,useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 import Sidebar from "./SideBar";
 import ConnectionError from "./ConnectionError";
 import { Outlet } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
- import { auth } from "../utils/firebase";
- import {  onAuthStateChanged } from "firebase/auth";
- import {addUser,removeUser} from "../StoreSlices/userSlice";
-
-
+import { auth } from "../utils/firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { addUser, removeUser } from "../StoreSlices/userSlice";
+import Header from "./Header";
 const Body = () => {
   const dispatch = useDispatch();
-//  const navigate = useNavigate();
+  const location = useLocation();
 
-// eslint-disable-next-line
-  useEffect(()=>{
-   const unsubscribe =  onAuthStateChanged(auth, (user) => {
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        const {uid, email, displayName} = user;
-          dispatch(addUser({uid:uid,email:email,displayName:displayName}));
-          //navigate("/");
+        const { uid, email, displayName } = user;
+        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
       } else {
-       dispatch(removeUser());
-      // navigate("/Login")
+        dispatch(removeUser());
       }
     });
     return () => unsubscribe();
-  },[dispatch]);
+  }, []);
+
   const netStatus = useOnlineStatus();
-  const isLoginPage = window.location.pathname === "/Login";
- 
+  const isLoginPage = location.pathname === "/Login";
+
   const theme = useSelector((store) => store.theme.isDarkTheme);
+
   if (netStatus === false) {
     return <ConnectionError />;
   }
 
-
-
   return (
-    <div className={`flex ${theme ? "bg-gray-900" : "bg-white"} `}>
-    
+    <div className={`flex ${theme ? "bg-gray-900" : "bg-white"}`}>
+        
+        {!isLoginPage && <Header />}
       {!isLoginPage && <Sidebar />}
-      
       <Outlet />
     </div>
   );

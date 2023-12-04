@@ -27,7 +27,8 @@ Welcome to our YouTube clone project! 🚀 Get ready to explore its awesome feat
 1. Nested comments : currently in process ...
 
 
-## Demo Link - https://youtube-clone-viewtube.netlify.app/
+## Demo Link - 
+https://youtube-clone-viewtube.netlify.app/
 
 ## Contributing 🤝
 
@@ -43,6 +44,8 @@ I am  grateful to YouTube and other video-sharing platforms for inspiring this p
 🌟 **Redux**: Our loyal companion in state management. Redux enables us to maintain a clean, predictable, and scalable data flow, ensuring that our application runs smoothly and efficiently.
 
 🖌️ **Tailwind CSS**: The design wizardry that shapes the visual elegance of our YouTube clone. Tailwind CSS allows us to craft a sleek and intuitive user interface, offering a seamless and captivating experience to our users.
+
+
 
 I  deeply appreciate the creators and contributors of these remarkable tools for their dedication to advancing the art of web development. Together, they have made mine YouTube clone project possible and have enriched the lives of our users.
 

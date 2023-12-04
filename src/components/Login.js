@@ -2,10 +2,12 @@ import React, { useState, useRef } from "react";
 import checkValidateData from "../utils/validate";
 import handleAuthentication from "../utils/handleAuthentication";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
 
   const toggleSignIn = () => {
     setIsSignIn(!isSignIn);
@@ -29,10 +31,13 @@ const Login = () => {
         auth,
         email.current.value,
         password.current.value,
-        !isSignIn
+        isSignIn,
+        navigate
       );
+
       console.log(user);
     } catch (error) {
+      
       setErrorMessage(error.message);
     }
   };
