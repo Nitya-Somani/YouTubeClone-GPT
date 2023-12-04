@@ -21,11 +21,9 @@ const Body = () => {
       } else {
         dispatch(removeUser());
       }
-    }, [dispatch]); // Include "dispatch" in the dependency array
-  
+    });
     return () => unsubscribe();
   }, []);
-  
 
   const netStatus = useOnlineStatus();
   const isLoginPage = location.pathname === "/Login";
