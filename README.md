@@ -22,6 +22,8 @@ Welcome to our YouTube clone project! 🚀 Get ready to explore its awesome feat
 
 9.Search Results Caching📦: I've introduced a powerful caching system within our search functionality. This enhancement ensures that frequently requested search results are cached, leading to faster response times and a more responsive search experience.
 
+10.User Authentication with Firebase 🔐: Enjoy a seamless and secure login experience powered by Firebase Auth. Sign up, log in, and personalize your profile with ease. Benefit from social authentication, real-time status updates, and a logout feature. Our integration with Redux ensures efficient state management, while protected routes offer exclusive content for authenticated users. With continuous updates, rest assured that your authentication experience remains cutting-edge and secure.
+
 ## Currently Building - 
 
 1. Nested comments : currently in process ...

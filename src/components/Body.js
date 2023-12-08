@@ -26,7 +26,7 @@ const Body = () => {
       }
     });
     return () => unsubscribe();
-  }, []);
+  }, [dispatch]);
 
   const netStatus = useOnlineStatus();
   const isLoginPage = location.pathname === "/Login";
