@@ -5,16 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../StoreSlices/appSlice";
 import { toggleTheme } from "../StoreSlices/themeSlice";
 import SearchSuggestions from "./SearchSuggestions";
-import {  signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 const Header = () => {
-const dispatch = useDispatch();
-const navigate = useNavigate();
- const userUrl = useSelector(store=>store.user);
- console.log(userUrl?.photoURL && userUrl.photoURL);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const userUrl = useSelector((store) => store.user);
+  console.log(userUrl?.photoURL && userUrl.photoURL);
 
-  
   const isDarkTheme = useSelector((store) => store.theme.isDarkTheme);
 
   const toggleMenuHandler = () => {
@@ -26,22 +25,18 @@ const navigate = useNavigate();
   };
 
   const handleLogin = () => {
-    signOut(auth).then(() => {
-      // Sign-out successful.
-      navigate("/Login");
-    }).catch((error) => {
-      // An error happened.
-      navigate("/error");
-    });
+    signOut(auth)
+      .then(() => {
+        navigate("/Login");
+      })
+      .catch((error) => {
+        navigate("/error");
+      });
   };
- 
-  const handleSignOut = () =>{
-    signOut(auth).then(() => {
-      // Sign-out successful.
-    }).catch((error) => {
-      // An error happened.
-    });
-  }
+
+  const navigateLogin = () => {
+    navigate("/Login");
+  };
 
   return (
     <header
@@ -79,14 +74,23 @@ const navigate = useNavigate();
           >
             {isDarkTheme ? "DARK🌛" : "LIGHT ⛅"}
           </button>
-          <button className="p-2 focus:outline-none flex " onClick={handleLogin}>
-          <img
-  className="w-7 h-8 rounded-lg"
-  src={userUrl?.photoURL ? userUrl.photoURL : "https://i.pinimg.com/564x/5b/50/e7/5b50e75d07c726d36f397f6359098f58.jpg"}
-  alt="Login"
-/>
+          <button className="p-2 focus:outline-none flex ">
+            <img
+              className="w-10 h-10 rounded-lg"
+              onClick={navigateLogin}
+              src={
+                userUrl?.photoURL
+                  ? userUrl.photoURL
+                  : "https://i.pinimg.com/564x/5b/50/e7/5b50e75d07c726d36f397f6359098f58.jpg"
+              }
+              alt="Login"
+            />
 
-          <h6 onClick={handleSignOut} className="p-1 font-bold ">(Sign Out)</h6>
+            {userUrl?.photoURL && userUrl.photoURL && (
+              <h6 onClick={handleLogin} className="p-1 font-bold ">
+                (Sign Out)
+              </h6>
+            )}
           </button>
         </div>
       </div>
