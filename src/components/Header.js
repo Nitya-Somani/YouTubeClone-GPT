@@ -9,9 +9,11 @@ import {  signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 const Header = () => {
-  const dispatch = useDispatch();
+const dispatch = useDispatch();
 const navigate = useNavigate();
- 
+ const userUrl = useSelector(store=>store.user);
+ console.log(userUrl?.photoURL && userUrl.photoURL);
+
   
   const isDarkTheme = useSelector((store) => store.theme.isDarkTheme);
 
@@ -33,6 +35,14 @@ const navigate = useNavigate();
     });
   };
  
+  const handleSignOut = () =>{
+    signOut(auth).then(() => {
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 shadow-lg p-2 ${
@@ -69,9 +79,14 @@ const navigate = useNavigate();
           >
             {isDarkTheme ? "DARK🌛" : "LIGHT ⛅"}
           </button>
-          <button className="p-2 focus:outline-none" onClick={handleLogin}>
-            
-            <img  className="w-7 h-8 rounded-lg " src = "https://i.pinimg.com/564x/5b/50/e7/5b50e75d07c726d36f397f6359098f58.jpg" alt = "Login"/>
+          <button className="p-2 focus:outline-none flex " onClick={handleLogin}>
+          <img
+  className="w-7 h-8 rounded-lg"
+  src={userUrl?.photoURL ? userUrl.photoURL : "https://i.pinimg.com/564x/5b/50/e7/5b50e75d07c726d36f397f6359098f58.jpg"}
+  alt="Login"
+/>
+
+          <h6 onClick={handleSignOut} className="p-1 font-bold ">(Sign Out)</h6>
           </button>
         </div>
       </div>

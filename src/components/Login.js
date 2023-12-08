@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import checkValidateData from "../utils/validate";
-import handleAuthentication from "../utils/handleAuthentication";
+import useAuthenticationHandler from "../utils/useAuthenticationHandler";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +8,7 @@ const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
-
+  const { handleAuthentication } = useAuthenticationHandler();
   const toggleSignIn = () => {
     setIsSignIn(!isSignIn);
   };
@@ -23,24 +23,24 @@ const Login = () => {
       password.current.value
     );
     setErrorMessage(validateMsg);
-
+  
     if (validateMsg) return;
-
+  
     try {
       const user = await handleAuthentication(
-        auth,
         email.current.value,
         password.current.value,
+        name.current ? name.current.value : "", // Use an empty string if name is not provided
         isSignIn,
         navigate
       );
-
+  
       console.log(user);
     } catch (error) {
-      
       setErrorMessage(error.message);
     }
   };
+  
   return (
     <div className="h-screen w-full relative flex items-center justify-center">
       <img
