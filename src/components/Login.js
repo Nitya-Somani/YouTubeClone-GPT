@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import checkValidateData from "../utils/validate";
 import useAuthenticationHandler from "../utils/useAuthenticationHandler";
-import { auth } from "../utils/firebase";
+
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {

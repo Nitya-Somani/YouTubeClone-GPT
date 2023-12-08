@@ -14,6 +14,7 @@ const Body = () => {
   const location = useLocation();
 
   useEffect(() => {
+     // eslint-disable-next-line react-hooks/exhaustive-deps
     const unsubscribe = onAuthStateChanged(auth, (user) => {
      
       if (user) {
