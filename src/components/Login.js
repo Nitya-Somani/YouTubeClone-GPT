@@ -23,9 +23,9 @@ const Login = () => {
       password.current.value
     );
     setErrorMessage(validateMsg);
-  
+
     if (validateMsg) return;
-  
+
     try {
       const user = await handleAuthentication(
         email.current.value,
@@ -34,13 +34,11 @@ const Login = () => {
         isSignIn,
         navigate
       );
-  
-      console.log(user);
     } catch (error) {
       setErrorMessage(error.message);
     }
   };
-  
+
   return (
     <div className="h-screen w-full relative flex items-center justify-center">
       <img

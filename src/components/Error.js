@@ -4,7 +4,7 @@ import { Link,useRouteError } from 'react-router-dom';
 
 const Error = () => {
   const errorData = useRouteError();
-  console.log(errorData);
+  
   return (
 
     <div className="min-h-screen bg-gradient-to-b from-blue-200 to-blue-100 flex items-center justify-center relative">

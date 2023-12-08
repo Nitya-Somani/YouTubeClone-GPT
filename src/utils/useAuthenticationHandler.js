@@ -31,9 +31,8 @@ const useAuthenticationHandler = () => {
 
       return userCredential.user;
     } catch (error) {
-      // Handle authentication errors
-      console.error("Error during authentication: ", error);
-      throw error; // Propagate the error to the caller
+      
+      throw error; 
     }
   };
 

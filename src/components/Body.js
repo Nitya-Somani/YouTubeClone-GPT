@@ -14,13 +14,19 @@ const Body = () => {
   const location = useLocation();
 
   useEffect(() => {
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-     
       if (user) {
-        const { uid, email, displayName , photoURL} = user;
-       
-        dispatch(addUser({ uid: uid, email: email, displayName: displayName ,photoURL:photoURL}));
+        const { uid, email, displayName, photoURL } = user;
+
+        dispatch(
+          addUser({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL,
+          })
+        );
       } else {
         dispatch(removeUser());
       }
@@ -39,8 +45,7 @@ const Body = () => {
 
   return (
     <div className={`flex ${theme ? "bg-gray-900" : "bg-white"}`}>
-        
-        {!isLoginPage && <Header />}
+      {!isLoginPage && <Header />}
       {!isLoginPage && <Sidebar />}
       <Outlet />
     </div>

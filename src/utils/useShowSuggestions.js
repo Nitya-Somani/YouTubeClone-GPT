@@ -10,7 +10,7 @@ const useShowSuggestion = () => {
   const dispatch = useDispatch();
 
   const searchCache = useSelector((store) => store.search);
-  console.log(searchCache);
+
 
   useEffect(() => {
     const timer = setTimeout(() => {

@@ -12,10 +12,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userUrl = useSelector((store) => store.user);
-  console.log(userUrl?.photoURL && userUrl.photoURL);
-
   const isDarkTheme = useSelector((store) => store.theme.isDarkTheme);
-
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
   };
