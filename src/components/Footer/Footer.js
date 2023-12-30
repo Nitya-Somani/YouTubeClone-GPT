@@ -1,6 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {FontAwesomeIcon,faLinkedin} from "../../assests/FontAwesomeIcons/FontIcons";
 import { useSelector } from "react-redux";
 
 const Footer = () => {

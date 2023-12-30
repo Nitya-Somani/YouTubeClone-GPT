@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import { closeMenu } from "../StoreSlices/appSlice";
+import { closeMenu } from "../../StoreSlices/appSlice";
 
 const Watch = () => {
   const paramsQuery = useSearchParams();

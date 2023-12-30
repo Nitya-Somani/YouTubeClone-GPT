@@ -1,7 +1,5 @@
 import { useSelector } from "react-redux";
-import ButtonList from "./ButtonList";
-import VideoContainer from "./VideoContainer";
-import Footer from "./Footer";
+import {Footer , ButtonList,VideoContainer} from "../componentsIndex"
 
 const MainContainer = () => {
   const sideBarToggle = useSelector((store) => store.app.isMenuOpen);

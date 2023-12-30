@@ -1,9 +1,9 @@
 import React from "react";
-import VideoCard from "./VideoCard";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import ShimmerVideoContainer from "./ShimmerVideoContainer";
-import useFetchVideos from "../utils/useFetchVideos";
+import {useFetchVideos} from "../../utils/customHooks/hooksIndex";
+import {VideoCard,ShimmerVideoContainer} from "../componentsIndex"
+
 
 const VideoContainer = () => {
   const theme = useSelector((store) => store.theme.isDarkTheme);

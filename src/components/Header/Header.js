@@ -1,13 +1,12 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu } from "../StoreSlices/appSlice";
-import { toggleTheme } from "../StoreSlices/themeSlice";
-import SearchSuggestions from "./SearchSuggestions";
+import { toggleMenu } from "../../StoreSlices/appSlice";
+import { toggleTheme } from "../../StoreSlices/themeSlice";
 import { signOut } from "firebase/auth";
-import { auth } from "../utils/firebase";
+import { auth } from "../../utils/fireBaseAuth/firebase";
 import { useNavigate } from "react-router-dom";
+import {FontAwesomeIcon,faBars} from '../../assests/FontAwesomeIcons/FontIcons'
+import {SearchSuggestions} from '../componentsIndex'
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
-import checkValidateData from "../utils/validate";
-import useAuthenticationHandler from "../utils/useAuthenticationHandler";
-
+import checkValidateData from "../../utils/helperFunctions/validate";
+import {useAuthenticationHandler} from "../../utils/customHooks/hooksIndex";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {

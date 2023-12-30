@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { YOUTUBE_SEARCH_API } from "../utils/constants";
+import { YOUTUBE_SEARCH_API } from "../../constants/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { cacheResult } from "../StoreSlices/searchSlice";
+import { cacheResult } from "../../../StoreSlices/searchSlice";
 const useShowSuggestion = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);

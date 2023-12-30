@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
-import Sidebar from "./SideBar";
-import ConnectionError from "./ConnectionError";
 import { Outlet } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
-import { auth } from "../utils/firebase";
+import { auth } from "../../utils/fireBaseAuth/firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { addUser, removeUser } from "../StoreSlices/userSlice";
-import Header from "./Header";
+import { addUser, removeUser } from "../../StoreSlices/userSlice";
+import {useOnlineStatus} from '../../utils/customHooks/hooksIndex'
+import {Header,SideBar,ConnectionError} from '../componentsIndex'
+
 const Body = () => {
   const dispatch = useDispatch();
   const location = useLocation();
@@ -46,7 +45,7 @@ const Body = () => {
   return (
     <div className={`flex ${theme ? "bg-gray-900" : "bg-white"}`}>
       {!isLoginPage && <Header />}
-      {!isLoginPage && <Sidebar />}
+      {!isLoginPage && <SideBar />}
       <Outlet />
     </div>
   );

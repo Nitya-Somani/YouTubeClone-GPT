@@ -1,7 +1,5 @@
 import React from 'react';
-import ShimmerHeader from "./ShimmerHeader";
-
-import ShimmerSideBar from './ShimmerSideBar';
+import {ShimmerHeader,ShimmerSideBar} from '../componentsIndex'
 
 const Shimmer = () => {
   return (

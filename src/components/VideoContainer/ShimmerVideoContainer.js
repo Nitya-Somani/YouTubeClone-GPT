@@ -1,5 +1,5 @@
 import React from "react";
-import ShimmerVideoCard from "./ShimmerVideoCard";
+import {ShimmerVideoCard} from "../componentsIndex"
 
 const ShimmerVideoContainer = () => {
   const shimmerCards = [];

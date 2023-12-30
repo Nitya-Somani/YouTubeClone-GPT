@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { YOUTUBE_API } from "./constants";
+import { YOUTUBE_API } from "../../constants/constants";
 
 const useFetchVideos = () => {
   const [videos, setVideos] = useState(null);

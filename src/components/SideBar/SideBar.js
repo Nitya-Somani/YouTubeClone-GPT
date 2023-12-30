@@ -22,7 +22,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { useSelector } from "react-redux";
-import CollapseSideBar from "./CollapseSideBar";
+import {CollapseSideBar } from "../componentsIndex"
 import { Link } from "react-router-dom";
 
 

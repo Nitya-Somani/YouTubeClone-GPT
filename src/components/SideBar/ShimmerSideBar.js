@@ -1,5 +1,6 @@
 import React from "react";
-import ShimmerSideBarUl from "./ShimmerSideBarUl";
+import {ShimmerSideBarUl} from '../componentsIndex'
+
 
 const ShimmerSideBar = () => {
   return (

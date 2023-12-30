@@ -1,13 +1,9 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faBolt,
-  faTv,
-  faVideo,
-} from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import {FontAwesomeIcon,faVideo,faTv,faBolt,faHome} from '../../assests/FontAwesomeIcons/FontIcons'
+
+
 const CollapseSideBar = () => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
   const containerClasses = `  bg-${theme ? "gray-900" : "slate-50"} text-${

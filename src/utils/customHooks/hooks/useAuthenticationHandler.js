@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { addUser } from "../StoreSlices/userSlice";
-import { auth } from "./firebase";
+import { addUser } from "../../../StoreSlices/userSlice";
+import { auth } from "../../fireBaseAuth/firebase";
 
 const useAuthenticationHandler = () => {
   const dispatch = useDispatch();

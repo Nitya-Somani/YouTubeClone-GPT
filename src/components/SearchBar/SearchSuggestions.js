@@ -1,10 +1,12 @@
 import React from "react";
-import useShowSuggestion from "../utils/useShowSuggestions";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {handleArrowNavigation,handleSuggestionSelection} from "../utils/SuggestionsHelpers";
+import {useShowSuggestion} from "../../utils/customHooks/hooksIndex";
+import {handleArrowNavigation,handleSuggestionSelection} from "../../utils/helperFunctions/SuggestionsHelpers";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon,faSearch} from '../../assests/FontAwesomeIcons/FontIcons'
+
+
+
 
 const SearchSuggestions = () => {
   const isDarkTheme = useSelector((store) => store.theme.isDarkTheme);
