@@ -1,6 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  FontAwesomeIcon,
   faHome,
   faFootball,
   faFire,
@@ -19,21 +19,17 @@ import {
   faNewspaper,
   faTshirt,
   faMicrophone,
-} from "@fortawesome/free-solid-svg-icons";
-import "@fortawesome/fontawesome-svg-core/styles.css";
+} from "../../assests/FontAwesomeIcons";
 import { useSelector } from "react-redux";
-import {CollapseSideBar } from "../componentsIndex"
+import { CollapseSideBar } from "../componentsIndex";
 import { Link } from "react-router-dom";
-
 
 const SideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
- 
+
   const theme = useSelector((store) => store.theme.isDarkTheme);
 
- 
-
-   if (!isMenuOpen ) {
+  if (!isMenuOpen) {
     return <CollapseSideBar />;
   }
 

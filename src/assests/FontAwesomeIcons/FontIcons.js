@@ -2,13 +2,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import {
-  
   faBars,
   faSearch,
   faHome,
   faBolt,
   faTv,
   faVideo,
+  faFootball,
+  faFire,
+  faBell,
+  faHistory,
+  faPlay,
+  faClock,
+  faThumbsUp,
+  faChevronDown,
+  faStream,
+  faGamepad,
+  faMusic,
+  faFilm,
+  faNewspaper,
+  faTshirt,
+  faMicrophone,
 } from "@fortawesome/free-solid-svg-icons";
 
 export {
@@ -20,4 +34,19 @@ export {
   faBolt,
   faTv,
   faVideo,
+  faFootball,
+  faFire,
+  faBell,
+  faHistory,
+  faPlay,
+  faClock,
+  faThumbsUp,
+  faChevronDown,
+  faStream,
+  faGamepad,
+  faMusic,
+  faFilm,
+  faNewspaper,
+  faTshirt,
+  faMicrophone,
 };
