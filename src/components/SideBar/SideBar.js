@@ -19,7 +19,7 @@ import {
   faNewspaper,
   faTshirt,
   faMicrophone,
-} from "../../assests/FontAwesomeIcons";
+} from "../../assests/FontAwesomeIcons/FontIcons";
 import { useSelector } from "react-redux";
 import { CollapseSideBar } from "../componentsIndex";
 import { Link } from "react-router-dom";
