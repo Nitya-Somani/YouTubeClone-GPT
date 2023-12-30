@@ -7,7 +7,7 @@ const Error = () => {
   
   return (
 
-    <div className="min-h-screen bg-gradient-to-b from-blue-200 to-blue-100 flex items-center justify-center relative">
+    <div className="min-h-screen  w-full bg-gradient-to-b from-blue-200 to-blue-100 flex items-center justify-center relative">
  
       <div id="particles-container" className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"></div>
       <div className="z-10 text-center text-white mx-4">
