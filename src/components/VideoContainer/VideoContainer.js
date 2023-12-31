@@ -16,7 +16,7 @@ const VideoContainer = () => {
     <div
       className={`${
         theme ? "bg-gray-900 text-white" : "bg-white text-black"
-      } flex flex-wrap mt-28`}
+      } flex flex-wrap mt-[60px]`}
     >
       {videos.map((video) => (
         <Link to={"/watch?v=" + video.id}>

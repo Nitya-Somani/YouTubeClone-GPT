@@ -41,6 +41,11 @@ const appRouter = createBrowserRouter([
         element: <Watch />,
         errorElement: <Error />,
       },
+      {
+        path: "/oops",
+        element: <Error />,
+        errorElement: <Error />,
+      },
     ],
     errorElement: <Error />,
   },
