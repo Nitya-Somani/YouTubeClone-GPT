@@ -26,7 +26,7 @@ const Login = () => {
     if (validateMsg) return;
 
     try {
-      const user = await handleAuthentication(
+       await handleAuthentication(
         email.current.value,
         password.current.value,
         name.current ? name.current.value : "", // Use an empty string if name is not provided
@@ -36,6 +36,7 @@ const Login = () => {
     } catch (error) {
       setErrorMessage(error.message);
     }
+    
   };
 
   return (
