@@ -4,7 +4,7 @@ import {ShimmerHeader,ShimmerSideBar} from '../componentsIndex'
 const Shimmer = () => {
   return (
     <div>
-        <ShimmerHeader />
+      <ShimmerHeader />
         <div className={`flex`}>
       <ShimmerSideBar />
     </div>

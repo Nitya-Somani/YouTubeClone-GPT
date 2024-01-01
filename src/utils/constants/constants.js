@@ -5,3 +5,34 @@ export const YOUTUBE_API =
   GOOGLE_API_KEY;
 
 export const YOUTUBE_SEARCH_API =  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+
+export const mapButtons = [
+  "All",
+  "JavaScript",
+  "Music",
+  "Sports",
+  "News",
+  "Comedy",
+  "Live",
+  "T-series",
+  "Game Shows",
+  "DataBase",
+  "Algorithms",
+  "cooking",
+  "movies",
+  "webseries",
+  "Bollywood Music",
+  "New-Age Music",
+  "Indian soap operas",
+  "Courses",
+  "T-series",
+  "Game Shows",
+  "DataBase",
+  "Algorithms",
+  "cooking",
+  "movies",
+  "webseries",
+  "Bollywood Music",
+  "New-Age Music",
+  "Indian soap operas",
+  ];

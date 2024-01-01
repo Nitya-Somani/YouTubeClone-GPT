@@ -1,37 +1,8 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { FilterButton } from "../componentsIndex";
+import {mapButtons} from "../../utils/constants/constants"
 
-const mapButtons = [
-  "All",
-  "JavaScript",
-  "Music",
-  "Sports",
-  "News",
-  "Comedy",
-  "Live",
-  "T-series",
-  "Game Shows",
-  "DataBase",
-  "Algorithms",
-  "cooking",
-  "movies",
-  "webseries",
-  "Bollywood Music",
-  "New-Age Music",
-  "Indian soap operas",
-  "Courses",
-  "T-series",
-  "Game Shows",
-  "DataBase",
-  "Algorithms",
-  "cooking",
-  "movies",
-  "webseries",
-  "Bollywood Music",
-  "New-Age Music",
-  "Indian soap operas",
-  ];
 const itemsPerPage = 11;
 
 const ButtonCarousel = () => {
