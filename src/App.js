@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import store from '../src/store/store'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import {useFetchVideos} from "./utils/customHooks/hooksIndex";
-import {Body, Login, Shimmer, Watch, MainContainer, Error } from './components/componentsIndex';
+import {Body, Login, Shimmer, Watch, MainContainer, Error ,BrowseTv} from './components/componentsIndex';
 
 
 function App() {
@@ -39,6 +39,16 @@ const appRouter = createBrowserRouter([
       {
         path: "/watch",
         element: <Watch />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/oops",
+        element: <Error />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/browseTV",
+        element: <BrowseTv />,
         errorElement: <Error />,
       },
       {

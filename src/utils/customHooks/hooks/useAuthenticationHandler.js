@@ -11,7 +11,7 @@ const useAuthenticationHandler = () => {
       let userCredential;
       
       if (isSignIn) {
-       console.log("signing in ...")
+       
         userCredential = await signInWithEmailAndPassword(auth, email, password);
         navigate("/");
       } else {

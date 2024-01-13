@@ -54,10 +54,12 @@ const SideBar = () => {
           <FontAwesomeIcon icon={faFire} />
           <span>YouTube GPT</span>
         </li>
+        <Link to="/browseTV">
         <li className={listItems}>
           <FontAwesomeIcon icon={faTv} />
           <span>Flip To TV Display</span>
         </li>
+        </Link>
         <li className={listItems}>
           <FontAwesomeIcon icon={faVideo} />
           <span>Library</span>

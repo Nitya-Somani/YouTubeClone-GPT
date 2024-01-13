@@ -5,7 +5,7 @@ import { auth } from "../../utils/fireBaseAuth/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../../StoreSlices/userSlice";
 import {useOnlineStatus} from '../../utils/customHooks/hooksIndex'
-import {Header,SideBar,ConnectionError} from '../componentsIndex'
+import {Header,SideBar,ConnectionError, BrowseHeader} from '../componentsIndex'
 
 const Body = () => {
   const dispatch = useDispatch();
@@ -34,6 +34,7 @@ const Body = () => {
 
   const netStatus = useOnlineStatus();
   const isLoginPage = location.pathname === "/Login";
+  const isBrowsePage =location.pathname === "/browseTV"
 
   const theme = useSelector((store) => store.theme.isDarkTheme);
 
@@ -43,8 +44,10 @@ const Body = () => {
 
   return (
     <div className={`flex ${theme ? "bg-gray-900" : "bg-white"}`}>
-      {!isLoginPage && <Header />}
-      {!isLoginPage && <SideBar />}
+       {!isLoginPage  && !isBrowsePage && <Header />}
+      {!isLoginPage && !isBrowsePage && <SideBar />} 
+      {isBrowsePage? <BrowseHeader/>:null}
+      
       <Outlet />
     </div>
   );

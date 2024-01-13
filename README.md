@@ -24,6 +24,8 @@ Welcome to our YouTube clone project! 🚀 Get ready to explore its awesome feat
 
 10.User Authentication with Firebase 🔐: Enjoy a seamless and secure login experience powered by Firebase Auth. Sign up, log in, and personalize your profile with ease. Benefit from social authentication, real-time status updates, and a logout feature. Our integration with Redux ensures efficient state management, while protected routes offer exclusive content for authenticated users. With continuous updates, rest assured that your authentication experience remains cutting-edge and secure.
 
+11.TMDB Integration:Our application leverages the power of TMDB to access a vast collection of movies. Users can explore a comprehensive database that includes details like movie title, release date, genre, cast, crew, and more.
+
 ## Currently Building - 
 
 

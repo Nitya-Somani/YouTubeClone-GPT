@@ -1,7 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
+
+
 import {
+  faCircleInfo,
   faBars,
   faSearch,
   faHome,
@@ -49,4 +52,5 @@ export {
   faNewspaper,
   faTshirt,
   faMicrophone,
+  faCircleInfo
 };

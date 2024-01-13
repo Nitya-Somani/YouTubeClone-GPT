@@ -37,7 +37,7 @@ const ButtonCarousel = () => {
           className={`${arrowStyle} left-0`}
           onClick={() => handlePageChange(-1)}
         >
-          {"←"}
+          {" ← "}
         </button>
       )}
       <div className="flex space-x-2 overflow-x-auto" style={{ overflowX: "hidden" }}>
@@ -52,7 +52,7 @@ const ButtonCarousel = () => {
           className={`${arrowStyle} right-5`}
           onClick={() => handlePageChange(1)}
         >
-          {"→"}
+          {"→ "}
         </button>
       )}
     </div>

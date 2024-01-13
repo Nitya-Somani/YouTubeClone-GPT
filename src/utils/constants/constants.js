@@ -36,3 +36,11 @@ export const mapButtons = [
   "New-Age Music",
   "Indian soap operas",
   ];
+
+  export const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YzM3ZmUxNGE4NDQ5ZTkzNWYzMjVjZDBiNmFmMWU3MyIsInN1YiI6IjY1YTI3NGE3YjdiNjlkMDEyMjNiZjMxMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TPceyd8H_ntSZp7eBIxjSpYbqEHhfDA12NJzAcqH4d8'
+    }
+  };
