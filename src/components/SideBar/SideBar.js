@@ -52,11 +52,11 @@ const SideBar = () => {
         </Link>
         <li className={listItems}>
           <FontAwesomeIcon icon={faFire} />
-          <span>Trending</span>
+          <span>YouTube GPT</span>
         </li>
         <li className={listItems}>
           <FontAwesomeIcon icon={faTv} />
-          <span>Subscriptions</span>
+          <span>Flip To TV Display</span>
         </li>
         <li className={listItems}>
           <FontAwesomeIcon icon={faVideo} />
