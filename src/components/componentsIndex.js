@@ -27,6 +27,8 @@ import MainTvContainer from './FlipToTv/TvContainers/MainTvContainer.js';
 import SecondryTvContainer from './FlipToTv/TvContainers/SecondryTvContainer.js';
 import VideoBackground from './FlipToTv/MainTvVideoContainer/VideoBackground.js';
 import VideoTitle from './FlipToTv/MainTvVideoContainer/VideoTitle.js';
+import MovieCard from './FlipToTv/SecondaryTvContainer/MovieCard.js';
+import MovieList from './FlipToTv/SecondaryTvContainer/MovieList.js';
 
 export {
     Body,
@@ -57,5 +59,7 @@ export {
     MainTvContainer,
     SecondryTvContainer,
     VideoBackground,
-    VideoTitle
+    VideoTitle,
+    MovieCard,
+    MovieList
 };

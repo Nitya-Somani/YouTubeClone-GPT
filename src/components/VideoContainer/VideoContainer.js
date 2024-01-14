@@ -1,9 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {useFetchVideos} from "../../utils/customHooks/hooksIndex";
-import {VideoCard,ShimmerVideoContainer} from "../componentsIndex"
-
+import { useFetchVideos } from "../../utils/customHooks/hooksIndex";
+import { VideoCard, ShimmerVideoContainer } from "../componentsIndex";
 
 const VideoContainer = () => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
@@ -19,7 +18,7 @@ const VideoContainer = () => {
       } flex flex-wrap mt-[60px]`}
     >
       {videos.map((video) => (
-        <Link to={"/watch?v=" + video.id}>
+        <Link key={video.id} to={"/watch?v=" + video.id}>
           <VideoCard key={video.id} info={video} />
         </Link>
       ))}

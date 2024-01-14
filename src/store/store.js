@@ -4,6 +4,10 @@ import themeSlice from "../StoreSlices/themeSlice";
 import searchSlice from "../StoreSlices/searchSlice";
 import userSlice from "../StoreSlices/userSlice";
 import movieReducer from "../StoreSlices/movieSlice";
+import popularReducer from "../StoreSlices/movieSlice";
+import topRatedReducer from "../StoreSlices/movieSlice";
+import upcomingReducer from "../StoreSlices/movieSlice";
+
 
 const store = configureStore({
   reducer: {
@@ -11,7 +15,10 @@ const store = configureStore({
     theme: themeSlice,
     search:searchSlice,
     user:userSlice,
-    movies:movieReducer
+    movies:movieReducer,
+    popularMovies :popularReducer,
+    topRatedMovies:topRatedReducer,
+    upcomingMovies:upcomingReducer
 
   },
 });

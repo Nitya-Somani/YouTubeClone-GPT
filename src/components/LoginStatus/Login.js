@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import checkValidateData from "../../utils/helperFunctions/validate";
-import {useAuthenticationHandler} from "../../utils/customHooks/hooksIndex";
+import { useAuthenticationHandler } from "../../utils/customHooks/hooksIndex";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -26,17 +26,16 @@ const Login = () => {
     if (validateMsg) return;
 
     try {
-       await handleAuthentication(
+      await handleAuthentication(
         email.current.value,
         password.current.value,
-        name.current ? name.current.value : "", // Use an empty string if name is not provided
+        name.current ? name.current.value : "",
         isSignIn,
         navigate
       );
     } catch (error) {
       setErrorMessage(error.message);
     }
-    
   };
 
   return (

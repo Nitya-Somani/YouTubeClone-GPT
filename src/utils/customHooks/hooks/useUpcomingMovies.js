@@ -1,20 +1,20 @@
 import {  useEffect } from "react";
 import { options } from "../../constants/constants";
 import { useDispatch } from "react-redux";
-import { addNowPlaying } from "../../../StoreSlices/movieSlice";
+import { addUpcomingPlaying } from "../../../StoreSlices/movieSlice";
 
-function useNowPlayingMovies() {
+function useUpcomingMovies() {
   const dispatch = useDispatch();
   async function fetchData() {
     try {
       const response = await fetch(
-        "https://api.themoviedb.org/3/movie/now_playing?page=1",
+        "https://api.themoviedb.org/3/movie/upcoming?page=1",
         options
       );
       const jsonData = await response.json();
 
       
-      dispatch(addNowPlaying(jsonData.results));
+      dispatch(addUpcomingPlaying(jsonData.results));
      
     } catch (error) {
       console.error('Error Fetching TMDB Movies', error);
@@ -28,4 +28,4 @@ function useNowPlayingMovies() {
 
 }
 
-export default useNowPlayingMovies;
+export default useUpcomingMovies;
