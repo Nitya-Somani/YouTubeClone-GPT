@@ -19,6 +19,7 @@ function useTopRatedMovies() {
       throw error;
     }
   }
+  // eslint-disable-next-line no-unused-vars
   useEffect(() => {
     fetchData();
   }, []);

@@ -25,8 +25,9 @@ const useMovieTrailor = (movieID) => {
       console.error("Error fetching movie videos:", error);
     }
   };
-
+// eslint-disable-next-line no-unused-vars
   useEffect(() => {
+    
     getMovieVideos();
   }, []);
 

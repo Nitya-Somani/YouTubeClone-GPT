@@ -21,6 +21,7 @@ function useUpcomingMovies() {
      throw error;
     }
   }
+  // eslint-disable-next-line
   useEffect(() => {
     fetchData();
   }, []);
