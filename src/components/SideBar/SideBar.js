@@ -50,10 +50,12 @@ const SideBar = () => {
             <span>Home</span>
           </li>
         </Link>
+        <Link to="/GPT">
         <li className={listItems}>
           <FontAwesomeIcon icon={faFire} />
           <span>YouTube GPT</span>
         </li>
+        </Link>
         <Link to="/browseTV">
         <li className={listItems}>
           <FontAwesomeIcon icon={faTv} />

@@ -5,13 +5,14 @@ import { auth } from "../../utils/fireBaseAuth/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../../StoreSlices/userSlice";
 import {useOnlineStatus,useFetchVideos} from '../../utils/customHooks/hooksIndex'
-import {Header,SideBar,ConnectionError, BrowseHeader, Shimmer} from '../componentsIndex'
+import {Header,SideBar,ConnectionError, BrowseHeader, Loader} from '../componentsIndex'
 
 
 const Body = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const videos = useFetchVideos();
+  
   
   
 
@@ -41,19 +42,21 @@ const Body = () => {
   const isLoginPage = location.pathname === "/Login";
   const isBrowsePage =location.pathname === "/browseTV"
   const isErrorPage =location.pathname === "/oops"
-
   const theme = useSelector((store) => store.theme.isDarkTheme);
 
   if (netStatus === false) {
     return <ConnectionError />;
   }
-  if (videos === null  && !isBrowsePage ) return <Shimmer />;
+  if (videos === null  && !isBrowsePage ) return <Loader />;
+  
+  
   return (
     <div className={`flex ${theme ? "bg-gray-900" : "bg-white"}`}>
        {!isLoginPage  && !isBrowsePage   && !isErrorPage && <Header />}
       {!isLoginPage && !isBrowsePage   && !isErrorPage && <SideBar />} 
       {isBrowsePage? <BrowseHeader/>:null}
       {isErrorPage ? <BrowseHeader/>:null}
+      
       
       <Outlet />
     </div>

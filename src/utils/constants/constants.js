@@ -57,3 +57,9 @@ export const SEARCH_VIDEOS_PAGE =
   "&q=" +
   searchQuery +
   "&part=snippet&type=video";
+
+  export const SUPPORTED_LANGUAGES = [
+    { identifier: "en", name: "English" },
+    { identifier: "hindi", name: "Hindi" },
+ 
+  ];

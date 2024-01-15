@@ -29,6 +29,9 @@ import VideoBackground from './FlipToTv/MainTvVideoContainer/VideoBackground.js'
 import VideoTitle from './FlipToTv/MainTvVideoContainer/VideoTitle.js';
 import MovieCard from './FlipToTv/SecondaryTvContainer/MovieCard.js';
 import MovieList from './FlipToTv/SecondaryTvContainer/MovieList.js';
+import GPTView from './GPT/GPTView.js';
+import GPTMovieSuggestions from "./GPT/GPTMovieSuggestions.js";
+import GPTSearchBar from "./GPT/GPTSearchBar.js";
 
 export {
     Body,
@@ -61,5 +64,8 @@ export {
     VideoBackground,
     VideoTitle,
     MovieCard,
-    MovieList
+    MovieList,
+    GPTView,
+    GPTMovieSuggestions,
+    GPTSearchBar
 };
