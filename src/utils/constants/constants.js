@@ -63,3 +63,5 @@ export const SEARCH_VIDEOS_PAGE =
     { identifier: "hindi", name: "Hindi" },
  
   ];
+
+  export const OPEN_AI_KEY = "dummygpt";
