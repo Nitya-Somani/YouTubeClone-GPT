@@ -44,7 +44,7 @@ const appRouter = createBrowserRouter([
         errorElement: <Error />,
       },
       {
-        path: "/Oops",
+        path: "/404",
         element: <Error/>,//<GPTView/>,
         errorElement: <Error />,
       }
