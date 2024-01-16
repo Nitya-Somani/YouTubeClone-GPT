@@ -1,13 +1,10 @@
-
-import {Error} from "../../../components/componentsIndex";
-import {useTMDBsearchAPI} from "../hooksIndex";
+import { Error } from "../../../components/componentsIndex";
+import { useTMDBsearchAPI } from "../hooksIndex";
 import { addgptMovieResults } from "../../../StoreSlices/gptSlice";
 
-const usehandleGPTSearchClick = async (targetSearch,dispatch) => {
-  console.log(targetSearch);
-
+const usehandleGPTSearchClick = async (targetSearch, dispatch) => {
   if (targetSearch === null || targetSearch === undefined) {
-    return <Error/>;
+    return <Error />;
   }
   //  *********************** For now I   am using Dummy gpt feel free to use your secret key for openAI gpt and uncomment out below code.********************
 
@@ -27,8 +24,6 @@ const usehandleGPTSearchClick = async (targetSearch,dispatch) => {
   /****************Dummy GPT Starts *********************/
   let gptDummyResults;
 
-  
-
   if (targetSearch.includes("horror")) {
     gptDummyResults = "Raaz, Bhoot, 1920, Talaash, Ragini MMS, Pari";
   } else if (targetSearch.includes("family")) {
@@ -47,22 +42,19 @@ const usehandleGPTSearchClick = async (targetSearch,dispatch) => {
     gptDummyResults =
       "Dilwale Dulhania Le Jayenge, Jab Tak Hai Jaan, The Notebook, Titanic, La La Land, Before Sunrise, Pride and Prejudice, A Walk to Remember, Casablanca, Pretty Woman";
   } else {
-
-    gptDummyResults = "No specific genre matched. Try searching for horror, family, action, comedy, drama, or romantic movies!";
+    gptDummyResults =
+      "No specific genre matched. Try searching for horror, family, action, comedy, drama, or romantic movies!";
   }
-  
-/************************Dummy GPT ENDS *********************************************/
-  
+
+  /************************Dummy GPT ENDS *********************************************/
+
   const dummyGpt = gptDummyResults.split(",");
-  const promiseALL =dummyGpt.map((movie)=> useTMDBsearchAPI(movie));
+  const promiseALL = dummyGpt.map((movie) => useTMDBsearchAPI(movie));
   const tmdbResults = await Promise.all(promiseALL);
-  console.log(tmdbResults);
 
-  dispatch(addgptMovieResults({gptMovies:gptDummyResults,tmdbRes:tmdbResults}));
-
-
- 
-
+  dispatch(
+    addgptMovieResults({ gptMovies: gptDummyResults, tmdbRes: tmdbResults })
+  );
 };
 
 export default usehandleGPTSearchClick;
