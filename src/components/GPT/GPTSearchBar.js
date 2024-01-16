@@ -23,8 +23,10 @@ const GPTSearchBar = ({ theme }) => {
     });
 
     if(!gptResults.choices) return <Error/>
+    // For now i  am using dummy gpt feel free to use your secret key for openAI gpt and comment out below code 
     const gptDummyResults = "Hera Pheri, Andaz Apna Apna, Chupke Chupke, Bhool Bhulaiyaa, Coolie No. 1, Dhol";
     const dummyGpt = gptDummyResults.split(",");
+    console.log(dummyGpt);
     
 
   };
