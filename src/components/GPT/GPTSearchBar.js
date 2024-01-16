@@ -1,8 +1,7 @@
 import React, { useRef } from "react";
-import { useSelector } from "react-redux";
+import { useSelector ,useDispatch} from "react-redux";
 import lang from "../../utils/constants/languageConstants";
-import openai from "../../utils/openAI/openAI";
-import {Error} from "../componentsIndex"
+import {usehandleGPTSearchClick} from "../../utils/customHooks/hooksIndex";
 
 const GPTSearchBar = ({ theme }) => {
   const inputBgColor = theme
@@ -11,25 +10,8 @@ const GPTSearchBar = ({ theme }) => {
 
   const langKey = useSelector((store) => store.gpt.languageKey);
   const searchText = useRef(null);
-  const handleGPTSearchClick = async () => {
-    console.log(searchText.current.value);
-    const gptQuery =
-      "Act as a movie recommendation system and suggest some movies for the query:" +
-      searchText.current.value +
-      "only give me names of 6 movies,comma separted like the example result given ahead.Example Result: Gadar,Sholay,Don,Golmaal,Koi Mil Gya";
-    const gptResults = await openai.chat.completions.create({
-      messages: [{ role: "user", content: gptQuery }],
-      model: "gpt-3.5-turbo",
-    });
 
-    if(!gptResults.choices) return <Error/>
-    // For now i  am using dummy gpt feel free to use your secret key for openAI gpt and comment out below code 
-    const gptDummyResults = "Hera Pheri, Andaz Apna Apna, Chupke Chupke, Bhool Bhulaiyaa, Coolie No. 1, Dhol";
-    const dummyGpt = gptDummyResults.split(",");
-    console.log(dummyGpt);
-    
-
-  };
+  const dispatch = useDispatch();
 
   return (
     <div
@@ -60,7 +42,7 @@ const GPTSearchBar = ({ theme }) => {
             ref={searchText}
           />
           <span className={`px-4 cursor-pointer   `}>
-            <button onClick={handleGPTSearchClick}> 🚀</button>
+            <button onClick={()=>usehandleGPTSearchClick(searchText.current.value,dispatch)}> 🚀</button>
           </span>
         </div>
       </div>

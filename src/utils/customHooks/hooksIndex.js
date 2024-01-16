@@ -7,6 +7,8 @@ import useNowPlayingMovies from "../customHooks/hooks/useNowPlayingMovies";
 import usePopularMovies from "../customHooks/hooks/usePopularMovies";
 import useTopRatedMovies from "../customHooks/hooks/useTopRatedMovies";
 import useUpcomingMovies from "../customHooks/hooks/useUpcomingMovies";
+import usehandleGPTSearchClick from "./hooks/usehandleGPTSearchClick";
+import useTMDBsearchAPI from "./hooks/useTMDBsearchAPI";
 export {
   useUpcomingMovies,
   usePopularMovies,
@@ -17,4 +19,6 @@ export {
   useShowSuggestion,
   useMovieTrailor,
   useNowPlayingMovies,
+  usehandleGPTSearchClick,
+  useTMDBsearchAPI
 };

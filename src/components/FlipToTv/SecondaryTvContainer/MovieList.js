@@ -5,9 +5,14 @@ import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import { useLocation } from "react-router-dom";
 
 const MovieList = ({ title, movies }) => {
-  const itemsPerPage = 8;
+  const location = useLocation();
+
+  const isGPTPage = location.pathname === "/GPT";
+  const itemsPerPage = isGPTPage ? 6 : 7;
+
   const [currentPage, setCurrentPage] = useState(0);
   const totalPageCount = Math.ceil(movies.length / itemsPerPage);
 
@@ -28,12 +33,17 @@ const MovieList = ({ title, movies }) => {
 
   const firstCardRef = useRef(null);
   const lastCardRef = useRef(null);
-
+  const widthView = isGPTPage ? "w-[1190px]" : "w-[1490px]";
   return (
     <div>
-      <h1 className="text-lg text-white m-4 ">{title}</h1>
+      {isGPTPage ? (
+        <h1 className="text-lg  m-4 ">{title}</h1>
+      ) : (
+        <h1 className="text-lg text-white m-4 ">{title}</h1>
+      )}
+
       <div className="relative">
-        <div className="flex overflow-hidden w-[1490px] mx-4">
+        <div className={`flex overflow-hidden ${widthView} mx-4`}>
           {visibleMovies.map((moviecard, index) => (
             <div
               key={moviecard.id}

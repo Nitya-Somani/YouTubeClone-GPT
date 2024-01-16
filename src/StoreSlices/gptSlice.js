@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-    languageKey:"en",
+    languageKey:"en",gptMovies:null,tmdbRes:null
 }
 const gptSlice = createSlice({
   name: "gpt",
@@ -8,11 +8,16 @@ const gptSlice = createSlice({
   reducers: {
     changeLanguage :(state,action)=>{
         state.languageKey = action.payload;
+    },
+    addgptMovieResults:(state,action)=>{
+      const {gptMovies,tmdbRes} = action.payload;
+      state.gptMovies = gptMovies;
+      state.tmdbRes = tmdbRes;
     }
   
    
   },
 });
 
-export const {changeLanguage } = gptSlice.actions;
+export const {changeLanguage,addgptMovieResults } = gptSlice.actions;
 export default gptSlice.reducer;

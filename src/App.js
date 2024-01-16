@@ -37,11 +37,7 @@ const appRouter = createBrowserRouter([
         element: <Watch />,
         errorElement: <Error />,
       },
-      {
-        path: "/opps",
-        element: <Error />,
-        errorElement: <Error />,
-      },
+ 
       {
         path: "/browseTV",
         element: <BrowseTv />,

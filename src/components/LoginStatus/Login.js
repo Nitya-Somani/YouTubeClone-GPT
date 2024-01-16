@@ -2,8 +2,12 @@ import React, { useState, useRef } from "react";
 import checkValidateData from "../../utils/helperFunctions/validate";
 import { useAuthenticationHandler } from "../../utils/customHooks/hooksIndex";
 import { useNavigate } from "react-router-dom";
+import {Loader} from "../componentsIndex"
 
 const Login = () => {
+  setTimeout(function() {
+    <Loader/>
+  }, 6000);
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();

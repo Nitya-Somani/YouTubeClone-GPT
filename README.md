@@ -31,7 +31,12 @@ Welcome to our YouTube clone project! 🚀 Get ready to explore its awesome feat
 13.Flip to TV Mode 📺: Experience a new way to explore content with our unique "Flip to TV" feature. Users can seamlessly transition to TV mode, where they can immerse themselves in a vast collection of movies, TV shows, and more. The flip animation adds a touch of interactivity, making the switch between modes both visually appealing and intuitive. Whether you're in the mood for movies or TV series, the Flip to TV page provides a delightful browsing experience, giving you a cinematic feel right from your screen. Explore, discover, and enjoy a wide range of entertainment content with just a flip.
 
 14.Multi-Language GPT Search 🌐:
-Introducing a sophisticated GPT-powered search functionality that seamlessly supports both Hindi and English languages. Our innovative multi-language feature enhances user experience by allowing individuals to explore content, information, and entertainment effortlessly in their preferred language. The built-in GPT search intelligently understands and processes queries in both Hindi and English, offering a versatile and inclusive search experience. Whether you're seeking information, enjoying multimedia content, or simply engaging with your device, our multi-language GPT search ensures that language diversity is no barrier to a comprehensive and user-friendly search process.
+Introducing a sophisticated GPT-powered search functionality that seamlessly supports both Hindi and English languages. Our innovative multi-language feature enhances user experience by allowing individuals to explore content, information, and entertainment effortlessly in their preferred language.
+
+The built-in GPT search intelligently understands and processes queries in both Hindi and English, offering a versatile and inclusive search experience. Whether you're seeking information, enjoying multimedia content, or simply engaging with your device, our multi-language GPT search ensures that language diversity is no barrier to a comprehensive and user-friendly search process.
+
+Feel free to use your secret key and integrate with OpenAI's powerful GPT model. Currently, the OpenAI code is commented out, and dummy results are used as a placeholder. Please uncomment the OpenAI code and replace the dummy results with the actual integration when ready. Note that OpenAI is a paid service, and you should use your secret key for authentication.
+
 
 ## Currently Building - 
 
@@ -40,7 +45,7 @@ Introducing a sophisticated GPT-powered search functionality that seamlessly sup
 
 
 ## Demo Link - 
-https://youtube-clone-viewtube.netlify.app/
+https://you-tube-clone-cyan.vercel.app
 
 ## Contributing 🤝
 
