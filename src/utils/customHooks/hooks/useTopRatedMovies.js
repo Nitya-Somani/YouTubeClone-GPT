@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { options } from "../../constants/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch ,useSelector} from "react-redux";
 import { addTopRatedMovies } from "../../../StoreSlices/movieSlice";
 
 function useTopRatedMovies() {
   const dispatch = useDispatch();
+  const TopRatedMovies = useSelector((store)=>store.TopRatedMovies);
   async function fetchData() {
     try {
       const response = await fetch(
@@ -21,7 +22,7 @@ function useTopRatedMovies() {
   }
   // eslint-disable-next-line no-unused-vars
   useEffect(() => {
-    fetchData();
+    !TopRatedMovies && fetchData();
   }, []);
 }
 

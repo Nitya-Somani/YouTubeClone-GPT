@@ -1,10 +1,11 @@
 import  { useEffect } from "react";
 import { options } from "../../../utils/constants/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch ,useSelector} from "react-redux";
 import {addTrailor} from '../../../StoreSlices/movieSlice'
 
 const useMovieTrailor = (movieID) => {
     const dispatch = useDispatch();
+    const useTrailorRedux = useSelector((store)=>store.MovieTrailor);
     
   const getMovieVideos = async () => {
     try {
@@ -28,7 +29,7 @@ const useMovieTrailor = (movieID) => {
 // eslint-disable-next-line no-unused-vars
   useEffect(() => {
     
-    getMovieVideos();
+    !useTrailorRedux &&  getMovieVideos();
   }, []);
 
 }

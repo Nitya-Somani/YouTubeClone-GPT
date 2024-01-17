@@ -7,7 +7,7 @@ import {Loader} from "../componentsIndex"
 const Login = () => {
   setTimeout(function() {
     <Loader/>
-  }, 6000);
+  }, 9000);
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
