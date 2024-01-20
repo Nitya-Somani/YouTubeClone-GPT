@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {}
+const initialState = {
+    filterbtn:false,filterbtnSearch:null
+}
 
 const searchSlice = createSlice({
     
@@ -12,9 +14,13 @@ const searchSlice = createSlice({
            return{
             ...state,...action.payload,
            };
+        },
+        filterSearch:(state,action)=>{
+            state.filterbtn = true;
+            state.filterbtnSearch = action.payload;
         }
     }
 });
 
-export const {cacheResult} = searchSlice.actions;
+export const {cacheResult ,filterSearch} = searchSlice.actions;
 export default searchSlice.reducer;

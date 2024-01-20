@@ -1,4 +1,4 @@
-const GOOGLE_API_KEY =process.env.REACT_APP_GOOGLE_API_KEY;
+const GOOGLE_API_KEY ="AIzaSyBQHinZ_fxptqNzg_2wHmhB6RHoJmsnA54"//=process.env.REACT_APP_GOOGLE_API_KEY;
 
 export const YOUTUBE_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&maxResults=50&key=" +
@@ -49,14 +49,12 @@ export const options = {
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w780";
 
-//need to develope this
-const searchQuery = "songs";
+
+
 export const SEARCH_VIDEOS_PAGE =
   "https://www.googleapis.com/youtube/v3/search?key=" +
   GOOGLE_API_KEY +
-  "&q=" +
-  searchQuery +
-  "&part=snippet&type=video";
+  "&q=" ;
 
   export const SUPPORTED_LANGUAGES = [
     { identifier: "en", name: "English" },

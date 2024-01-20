@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { FilterButton } from "../componentsIndex";
 import {mapButtons} from "../../utils/constants/constants"
 
+
 const itemsPerPage = 11;
 
 const ButtonCarousel = () => {
@@ -18,6 +19,7 @@ const ButtonCarousel = () => {
       return Math.max(0, Math.min(nextPage, totalPages - 1));
     });
   };
+
 
   const startIdx = currentPage * itemsPerPage;
   const endIdx = startIdx + itemsPerPage;
