@@ -97,7 +97,7 @@ const Header = () => {
             }`}
             onClick={toggleThemeHandler}
           >
-            {isDarkTheme ? "DARK🌛" : "LIGHT ⛅"}
+            {isDarkTheme ? "🌛" : "⛅"}
           </button>
           <button className="p-2 focus:outline-none flex ">
             <img

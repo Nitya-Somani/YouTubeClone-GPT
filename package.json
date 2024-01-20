@@ -12,7 +12,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "date-fns": "^2.30.0",
-    "firebase": "^10.7.0",
+    "firebase": "^10.7.2",
     "numeral": "^2.0.6",
     "openai": "^4.24.7",
     "particles.js": "^2.0.0",
