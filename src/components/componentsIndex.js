@@ -32,7 +32,9 @@ import MovieList from './FlipToTv/SecondaryTvContainer/MovieList.js';
 import GPTView from './GPT/GPTView.js';
 import GPTMovieSuggestions from "./GPT/GPTMovieSuggestions.js";
 import GPTSearchBar from "./GPT/GPTSearchBar.js";
-
+import SearchPage from "./SearchPage/SearchPage.js";
+import SearchVideoCard from "./SearchPage/SearchVideoCard.js"
+import VideoDetails from "./WatchContainer/VideoDetails.js"
 export {
     Body,
     Shimmer,
@@ -67,5 +69,7 @@ export {
     MovieList,
     GPTView,
     GPTMovieSuggestions,
-    GPTSearchBar
+    GPTSearchBar,
+    SearchPage,
+    VideoDetails,SearchVideoCard
 };

@@ -43,7 +43,7 @@ const MovieList = ({ title, movies }) => {
       )}
 
       <div className="relative">
-        <div className={`flex overflow-hidden ${widthView} mx-4`}>
+        <div className={`flex overflow-hidden justify-center ${widthView}  `}>
           {visibleMovies.map((moviecard, index) => (
             <div
               key={moviecard.id}

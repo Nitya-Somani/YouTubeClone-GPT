@@ -8,6 +8,7 @@ import popularReducer from "../StoreSlices/movieSlice";
 import topRatedReducer from "../StoreSlices/movieSlice";
 import upcomingReducer from "../StoreSlices/movieSlice";
 import gptReducer from "../StoreSlices/gptSlice";
+import videoReducer from "../StoreSlices/videoSlice";
 
 
 const store = configureStore({
@@ -20,7 +21,8 @@ const store = configureStore({
     popularMovies :popularReducer,
     topRatedMovies:topRatedReducer,
     upcomingMovies:upcomingReducer,
-    gpt:gptReducer
+    gpt:gptReducer,
+    video:videoReducer
 
   },
 });

@@ -19,3 +19,4 @@ export const handleArrowNavigation = (event, suggestions, setSelectedSuggestionI
     hideSuggestions();
   };
   
+  

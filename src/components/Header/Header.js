@@ -73,7 +73,7 @@ const Header = () => {
         </div>
         {isGptView ? (
           <select
-            className="float-right absolute right-[10rem] bg-gradient-to-r from-red-500 to-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="float-right absolute right-[12rem] bg-gradient-to-r from-red-500 to-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             onChange={handleLanguageChange}
           >
             {SUPPORTED_LANGUAGES.map((lang) => (

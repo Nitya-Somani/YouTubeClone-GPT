@@ -11,6 +11,7 @@ import usehandleGPTSearchClick from "./hooks/usehandleGPTSearchClick";
 import useTMDBsearchAPI from "./hooks/useTMDBsearchAPI";
 import useSearchYouTube from "./hooks/useSearchYouTube";
 import useForceUpdate from "./hooks/useForceUpdate";
+import useGetVideoById from "./hooks/useGetVideoById";
 export {
   useUpcomingMovies,
   usePopularMovies,
@@ -24,5 +25,6 @@ export {
   usehandleGPTSearchClick,
   useTMDBsearchAPI,
   useSearchYouTube,
-  useForceUpdate
+  useForceUpdate,
+  useGetVideoById
 };

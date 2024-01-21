@@ -1,21 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { useShowSuggestion } from "../../utils/customHooks/hooksIndex";
+import React, { useState, useEffect, useRef } from "react";
+import {
+  useShowSuggestion,
+  useSearchYouTube,
+} from "../../utils/customHooks/hooksIndex";
 import {
   handleArrowNavigation,
   handleSuggestionSelection,
 } from "../../utils/helperFunctions/SuggestionsHelpers";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import {
   FontAwesomeIcon,
   faSearch,
 } from "../../assests/FontAwesomeIcons/FontIcons";
+import { useNavigate } from "react-router-dom";
+import { filterSearch } from "../../StoreSlices/searchSlice";
 
 const SearchSuggestions = () => {
   const isDarkTheme = useSelector((store) => store.theme.isDarkTheme);
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);
-
+  const searchText = useRef();
   const {
     searchQuery,
     suggestions,
@@ -42,13 +48,28 @@ const SearchSuggestions = () => {
 
   const handleKeyDown = (e) => {
     handleArrowNavigation(e, suggestions, setSelectedSuggestionIndex);
+
     if (e.key === "Enter" && selectedSuggestionIndex >= 0) {
+      const selectedSuggestion = suggestions[selectedSuggestionIndex];
+      const updatedSearchText = selectedSuggestion;
+      searchText.current.value = updatedSearchText;
+
       handleSuggestionSelection(
         suggestions[selectedSuggestionIndex],
         handleSearchQueryChange,
         hideSuggestions
       );
+      showSeachView();
     }
+  };
+  const handleFilterSearch = async () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const data = await useSearchYouTube(searchText.current.value);
+    dispatch(filterSearch(data));
+  };
+  const showSeachView = async () => {
+    await handleFilterSearch();
+    navigate("/results");
   };
 
   return (
@@ -60,6 +81,7 @@ const SearchSuggestions = () => {
           className={`h-11 px-4 py-2 border border-r-0 rounded-l-full focus:outline-none ${searchInputClassName}`}
           placeholder="Search"
           value={searchQuery}
+          ref={searchText}
           onChange={(e) => handleSearchQueryChange(e.target.value)}
           onFocus={() => handleSearchQueryChange(searchQuery)}
           onBlur={hideSuggestions}
@@ -69,6 +91,7 @@ const SearchSuggestions = () => {
           id="search-icon-legacy"
           className={`absolute right-0 top-0 h-full px-3 py-2.5 border rounded-r-full ${searchInputClassName}`}
           aria-label="Search"
+          onClick={showSeachView}
         >
           <FontAwesomeIcon icon={faSearch} />
         </button>
@@ -83,12 +106,15 @@ const SearchSuggestions = () => {
                   className={`${suggestionListItemClassName} py-1 px-3 cursor-pointer ${
                     index === selectedSuggestionIndex ? "bg-gray-400" : ""
                   }`}
-                  onClick={() => {
+                  onMouseDown={(e) => {
                     handleSuggestionSelection(
                       s,
                       handleSearchQueryChange,
-                      hideSuggestions
+                      hideSuggestions,
+                      (searchText.current.value = s)
                     );
+
+                    showSeachView();
                   }}
                 >
                   <FontAwesomeIcon icon={faSearch} /> &nbsp;&nbsp;{s}

@@ -5,12 +5,15 @@ import { useSelector } from "react-redux";
 
 const VideoCard = ({ info }) => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
+  const filterBtn = useSelector((store) => store.search.filterbtn);
   if (!info || !info.snippet) {
     return null;
   }
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails } = snippet;
-  const formattedViews = numeral(statistics.viewCount).format("0.0a");
+  const formattedViews = filterBtn
+    ? null
+    : numeral(statistics.viewCount).format("0.0a");
   const publishedAt = new Date(snippet.publishedAt);
   const formattedDate = formatDistanceToNow(publishedAt, { addSuffix: true });
 
@@ -47,7 +50,7 @@ const VideoCard = ({ info }) => {
               theme ? "text-gray-400" : "text-gray-900"
             }`}
           >
-            <span>{formattedViews} views</span>
+            <span>{filterBtn ? formattedViews : null} views</span>
             <span className="mx-2">•</span>
             <span>{formattedDate}</span>
           </div>

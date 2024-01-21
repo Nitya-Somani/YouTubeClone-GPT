@@ -6,9 +6,10 @@ import { VideoCard, ShimmerVideoContainer } from "../componentsIndex";
 
 const VideoContainer = () => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
-
-  const videos = useFetchVideos();
-
+  const filterBtn = useSelector((store) => store.search.filterbtn);
+  const filterbtnSearch = useSelector((store) => store.search.filterbtnSearch);
+  const allVideos = useFetchVideos();
+  const videos = filterBtn ? filterbtnSearch : allVideos;
   if (videos === null) return <ShimmerVideoContainer />;
 
   return (
@@ -17,10 +18,13 @@ const VideoContainer = () => {
         theme ? "bg-gray-900 text-white" : "bg-white text-black"
       } flex flex-wrap mt-[60px]`}
     >
-      {videos.map((video) => (
-        <Link key={video.id} to={"/watch?v=" + video.id}>
+      {videos?.map((video) => (
+        filterBtn ?(
+        <Link key={video.id} to={"/watch?v=" + video.id.videoId}>
           <VideoCard key={video.id} info={video} />
-        </Link>
+        </Link> ):(<Link key={video.id} to={"/watch?v=" + video.id}>
+          <VideoCard key={video.id} info={video} />
+        </Link> )
       ))}
     </div>
   );

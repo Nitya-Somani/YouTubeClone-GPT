@@ -26,6 +26,7 @@ import {
   faNewspaper,
   faTshirt,
   faMicrophone,
+  faTowerBroadcast
 } from "@fortawesome/free-solid-svg-icons";
 
 export {
@@ -52,5 +53,5 @@ export {
   faNewspaper,
   faTshirt,
   faMicrophone,
-  faCircleInfo
+  faCircleInfo,faTowerBroadcast
 };

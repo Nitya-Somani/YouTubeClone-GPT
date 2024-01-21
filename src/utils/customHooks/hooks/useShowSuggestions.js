@@ -40,6 +40,7 @@ const useShowSuggestion = () => {
   };
 
   const handleSearchQueryChange = (query) => {
+   
     setSearchQuery(query);
     setShowSuggestions(true);
   };
