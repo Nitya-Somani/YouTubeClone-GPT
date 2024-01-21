@@ -39,11 +39,13 @@ Feel free to use your secret key and integrate with OpenAI's powerful GPT model.
 
 15.Search Page 📄: Discover endless content instantly. Enter your query and explore a curated collection of movies, TV shows, and more. Use powerful filters to refine your results based on genre, duration, and preferences. Enjoy a visually appealing interface with engaging thumbnails. Intelligent recommendations personalize your experience. Click on any video for immediate access. Uncover, explore, and immerse yourself in a world of entertainment with just a few clicks.
 
+16.Nested Comments 💬: Dive into rich discussions about your favorite videos. Experience a dynamic space where users engage in conversations, sharing thoughts and insights. Whether it's reactions to a thrilling scene or discussions on hidden details, the nested comments provide an immersive experience. Seamlessly explore threads, respond to comments, and uncover a diverse range of perspectives. Use the nested structure to follow conversations and discover new insights related to the video content. Engage, discuss, and become a part of the community as you delve into the world of comments linked directly to your favorite videos.
+
 
 ## Currently Building - 
 
+coming soon ...
 
-1. Nested comments : currently in process ...
 
 
 ## Demo Link - 
