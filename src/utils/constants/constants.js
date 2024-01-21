@@ -1,4 +1,4 @@
-const GOOGLE_API_KEY = "AIzaSyA_UfBQVZ2sHb-cGBuGRoLjc2oWg0jA7KY";//"AIzaSyBQHinZ_fxptqNzg_2wHmhB6RHoJmsnA54"; //=process.env.REACT_APP_GOOGLE_API_KEY;
+const GOOGLE_API_KEY = "AIzaSyBQHinZ_fxptqNzg_2wHmhB6RHoJmsnA54"; //=process.env.REACT_APP_GOOGLE_API_KEY;
 
 export const YOUTUBE_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&maxResults=50&key=" +

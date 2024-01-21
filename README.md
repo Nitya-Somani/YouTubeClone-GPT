@@ -37,6 +37,8 @@ The built-in GPT search intelligently understands and processes queries in both 
 
 Feel free to use your secret key and integrate with OpenAI's powerful GPT model. Currently, the OpenAI code is commented out, and dummy results are used as a placeholder. Please uncomment the OpenAI code and replace the dummy results with the actual integration when ready. Note that OpenAI is a paid service, and you should use your secret key for authentication.
 
+15.Search Page 📄: Discover endless content instantly. Enter your query and explore a curated collection of movies, TV shows, and more. Use powerful filters to refine your results based on genre, duration, and preferences. Enjoy a visually appealing interface with engaging thumbnails. Intelligent recommendations personalize your experience. Click on any video for immediate access. Uncover, explore, and immerse yourself in a world of entertainment with just a few clicks.
+
 
 ## Currently Building - 
 
