@@ -1,4 +1,8 @@
+import {useSelector} from "react-redux";
+
 const Comment = ({ commDetails }) => {
+  const theme = useSelector((store)=>store.theme.isDarkTheme);
+  const color = theme ? "text-white" :"text-black"
   return (
     <>
       <div className="flex">
@@ -8,8 +12,8 @@ const Comment = ({ commDetails }) => {
           alt="img-icon"
         />
         <div>
-          <span className="text-white">{commDetails.name}</span>
-          <p className="text-white">{commDetails.text}</p>
+          <span className={color}>{commDetails.name}</span>
+          <p className={color}>{commDetails.text}</p>
         </div>
       </div>
     </>
