@@ -61,7 +61,7 @@ const Header = () => {
           >
             <FontAwesomeIcon icon={faBars} className="text-gray-400" />
           </button>
-          <a href="https://youtube-clone-viewtube.netlify.app/">
+          <a href="https://you-tube-clone-cyan.vercel.app/">
             <img
               className="h-12"
               src={
