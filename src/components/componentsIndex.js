@@ -34,11 +34,11 @@ import GPTMovieSuggestions from "./GPT/GPTMovieSuggestions.js";
 import GPTSearchBar from "./GPT/GPTSearchBar.js";
 import SearchPage from "./SearchPage/SearchPage.js";
 import SearchVideoCard from "./SearchPage/SearchVideoCard.js"
-import VideoDetails from "./WatchContainer/VideoDetails.js";
 import Comment from './WatchContainer/Comments/Comment.js';
 import CommentList from './WatchContainer/Comments/CommentList.js';
 import CommBase from './WatchContainer/Comments/CommBase.js';
-
+import ChatBox from './WatchContainer/LiveChat/ChatBox.js';
+import ChatMessage from './WatchContainer/LiveChat/ChatMessage.js';
 
 
 export {
@@ -77,9 +77,10 @@ export {
     GPTMovieSuggestions,
     GPTSearchBar,
     SearchPage,
-    VideoDetails,
     SearchVideoCard,
     Comment,
     CommBase,
-    CommentList
+    CommentList,
+    ChatBox,
+    ChatMessage
 };

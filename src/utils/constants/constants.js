@@ -75,3 +75,5 @@ export const Light_User_Icon =
 
 export const Dark_User_Icon =
   "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+
+export const OFFSET_LIVE_CHAT = 20;
