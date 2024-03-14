@@ -6,7 +6,7 @@ Welcome to our YouTube clone project! 🚀 Get ready to explore its awesome feat
 
 1.Collapsible Sidebar 📁: Emulating the iconic YouTube sidebar, you can easily navigate through Home, Trending, Subscriptions, Library, and more. Just click the ☰ icon in the top left corner to expand or collapse the sidebar.
 
-2.Theme Toggle 🌙🔆: We support both dark mode (🌙) and light mode (🔆). Personalize your viewing experience by toggling between these two themes. Look for the moon and sun icons to switch themes.
+2.Theme Toggle 🌙🔆: Elevate your browsing experience with our theme toggle feature, empowering you to seamlessly switch between dark mode (🌙) and light mode (🔆) for personalized viewing. Your preference is preserved using local storage, ensuring consistency across visits for a tailored and comfortable user experience.
 
 3.Loader ⏳: Enjoy a seamless user experience with our loading screen. It appears while we fetch data, making your wait more pleasant.
 

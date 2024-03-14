@@ -19,15 +19,19 @@ const Header = () => {
   const navigate = useNavigate();
   const userUrl = useSelector((store) => store.user);
   const isDarkTheme = useSelector((store) => store.theme.isDarkTheme);
-  const location = useLocation();
+   const location = useLocation();
   const isGptView = location.pathname === "/GPT";
 
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
+    
+ 
   };
 
   const toggleThemeHandler = () => {
     dispatch(toggleTheme());
+    
+  
   };
 
   const handleLogin = () => {
