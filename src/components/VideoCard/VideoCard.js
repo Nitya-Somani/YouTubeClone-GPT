@@ -7,6 +7,20 @@ const VideoCard = ({ info }) => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
   const filterBtn = useSelector((store) => store.search.filterbtn);
 
+  useEffect(() => {
+    if (info && info.snippet && info.snippet.thumbnails && info.snippet.thumbnails.medium.url) {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.href = info.snippet.thumbnails.medium.url;
+      link.as = "image";
+      document.head.appendChild(link);
+
+      return () => {
+        document.head.removeChild(link);
+      };
+    }
+  }, [info]);
+
   if (!info || !info.snippet) {
     return null;
   }
@@ -18,20 +32,6 @@ const VideoCard = ({ info }) => {
     : numeral(statistics.viewCount).format("0.0a");
   const publishedAt = new Date(snippet.publishedAt);
   const formattedDate = formatDistanceToNow(publishedAt, { addSuffix: true });
-
-  useEffect(() => {
-    if (thumbnails && thumbnails.medium && thumbnails.medium.url) {
-      const link = document.createElement("link");
-      link.rel = "preload";
-      link.href = thumbnails.medium.url;
-      link.as = "image";
-      document.head.appendChild(link);
-
-      return () => {
-        document.head.removeChild(link);
-      };
-    }
-  }, [thumbnails]);
 
   return (
     <div
