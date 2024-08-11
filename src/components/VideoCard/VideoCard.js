@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import numeral from "numeral";
 import { formatDistanceToNow } from "date-fns";
 import { useSelector } from "react-redux";
@@ -6,9 +6,11 @@ import { useSelector } from "react-redux";
 const VideoCard = ({ info }) => {
   const theme = useSelector((store) => store.theme.isDarkTheme);
   const filterBtn = useSelector((store) => store.search.filterbtn);
+
   if (!info || !info.snippet) {
     return null;
   }
+
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails } = snippet;
   const formattedViews = filterBtn
@@ -17,17 +19,31 @@ const VideoCard = ({ info }) => {
   const publishedAt = new Date(snippet.publishedAt);
   const formattedDate = formatDistanceToNow(publishedAt, { addSuffix: true });
 
+  useEffect(() => {
+    if (thumbnails && thumbnails.medium && thumbnails.medium.url) {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.href = thumbnails.medium.url;
+      link.as = "image";
+      document.head.appendChild(link);
+
+      return () => {
+        document.head.removeChild(link);
+      };
+    }
+  }, [thumbnails]);
+
   return (
     <div
       className={`${
         theme ? "bg-gray-900 text-white" : "bg-white text-black"
-      } rounded-lg overflow-hidden shadow-lg  m-2 `}
+      } rounded-lg overflow-hidden shadow-lg m-2 `}
       style={{ width: "24rem" }}
     >
       <img
         src={thumbnails.medium.url}
         alt={title}
-        className="w-full h-48  rounded-lg"
+        className="w-full h-48 rounded-lg"
       />
       <div className="flex items-center p-3">
         <img
