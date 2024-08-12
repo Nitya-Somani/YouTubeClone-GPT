@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js', // Entry point for your React application
@@ -39,16 +41,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-  ],
-  mode: 'production', // Set mode to production for optimization
-};
-
-const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
-
-module.exports = {
-  // ...previous configuration
-  plugins: [
-    // ...previous plugins
+    // Generate critical CSS and inline it in the HTML
     new HtmlCriticalWebpackPlugin({
       base: path.resolve(__dirname, 'dist'),
       src: 'index.html',
@@ -63,4 +56,15 @@ module.exports = {
       },
     }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin({
+      terserOptions: {
+        compress: {
+          drop_console: true, // Remove console logs in production
+        },
+      },
+    })],
+  },
+  mode: 'production', // Set mode to production for optimization
 };
