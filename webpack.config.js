@@ -2,9 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PurgeCSSPlugin = require('purgecss-webpack-plugin');
-const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
-const glob = require('glob-all');
 
 module.exports = {
   entry: './src/index.js', // Entry point for your React application
@@ -42,15 +39,16 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-    // Purge unused CSS
-    new PurgeCSSPlugin({
-      paths: glob.sync([
-        path.join(__dirname, 'src/**/*.js'),
-        path.join(__dirname, 'public/index.html')
-      ]),
-      safelist: ['safelist-class'], // Optional: classes to keep
-    }),
-    // Generate Critical CSS and inline it into the HTML
+  ],
+  mode: 'production', // Set mode to production for optimization
+};
+
+const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
+
+module.exports = {
+  // ...previous configuration
+  plugins: [
+    // ...previous plugins
     new HtmlCriticalWebpackPlugin({
       base: path.resolve(__dirname, 'dist'),
       src: 'index.html',
@@ -65,5 +63,4 @@ module.exports = {
       },
     }),
   ],
-  mode: 'production', // Set mode to production for optimization
 };
