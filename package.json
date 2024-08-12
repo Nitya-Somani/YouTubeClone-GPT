@@ -53,7 +53,9 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "glob-all": "^3.3.1",
     "html-critical-webpack-plugin": "^2.1.0",
+    "purgecss-webpack-plugin": "^6.0.0",
     "react-scripts": "^5.0.1",
     "tailwind-scrollbar": "^3.0.5",
     "tailwindcss": "^3.3.3"
