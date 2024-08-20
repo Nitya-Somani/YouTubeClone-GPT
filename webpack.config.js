@@ -4,6 +4,7 @@ const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js', // Entry point for your React application
@@ -54,6 +55,15 @@ module.exports = {
       penthouse: {
         blockJSRequests: false,
       },
+    }),
+    new CompressionPlugin({
+      filename: '[path][base].br',
+      algorithm: 'brotliCompress',
+      test: /\.(js|css|html|svg)$/,
+      compressionOptions: { level: 11 },
+      threshold: 10240,
+      minRatio: 0.8,
+      deleteOriginalAssets: true, // Set to true if you don't want to keep the original files
     }),
   ],
   optimization: {
