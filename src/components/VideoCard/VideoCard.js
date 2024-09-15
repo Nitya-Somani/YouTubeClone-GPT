@@ -8,15 +8,28 @@ const VideoCard = ({ info }) => {
   const filterBtn = useSelector((store) => store.search.filterbtn);
 
   useEffect(() => {
-    if (info && info.snippet && info.snippet.thumbnails && info.snippet.thumbnails.medium.url) {
-      const link = document.createElement("link");
-      link.rel = "preload";
-      link.href = info.snippet.thumbnails.medium.url;
-      link.as = "image";
-      document.head.appendChild(link);
+    if (info && info.snippet && info.snippet.thumbnails) {
+      const { medium, default: defaultThumbnail } = info.snippet.thumbnails;
+
+      const preloadImage = (url) => {
+        const link = document.createElement("link");
+        link.rel = "preload";
+        link.href = url;
+        link.as = "image";
+        document.head.appendChild(link);
+
+        return () => {
+          document.head.removeChild(link);
+        };
+      };
+
+      // Preload both medium and default thumbnails
+      const removeMediumPreload = preloadImage(medium.url);
+      const removeDefaultPreload = preloadImage(defaultThumbnail.url);
 
       return () => {
-        document.head.removeChild(link);
+        removeMediumPreload();
+        removeDefaultPreload();
       };
     }
   }, [info]);
@@ -27,9 +40,7 @@ const VideoCard = ({ info }) => {
 
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails } = snippet;
-  const formattedViews = filterBtn
-    ? null
-    : numeral(statistics.viewCount).format("0.0a");
+  const formattedViews = filterBtn ? null : numeral(statistics.viewCount).format("0.0a");
   const publishedAt = new Date(snippet.publishedAt);
   const formattedDate = formatDistanceToNow(publishedAt, { addSuffix: true });
 
@@ -54,9 +65,7 @@ const VideoCard = ({ info }) => {
         <div>
           <h3 className="text-lg font-semibold line-clamp-2">{title}</h3>
           <p
-            className={
-              theme ? "text-gray-400 text-sm" : "text-gray-900 text-sm"
-            }
+            className={theme ? "text-gray-400 text-sm" : "text-gray-900 text-sm"}
           >
             {channelTitle}
           </p>
