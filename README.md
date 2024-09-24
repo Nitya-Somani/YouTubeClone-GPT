@@ -44,7 +44,7 @@ Feel free to use your secret key and integrate with OpenAI's powerful GPT model.
 17.Live Chat 📱💬: Experience Real-Time Interaction
 Engage in lively discussions with  Live Chat feature powered by API polling. Stay connected with instant updates, using mock data for realistic conversations. Seamlessly explore threaded discussions, react to comments, and become part of the chat. The user-friendly interface ensures a smooth navigation experience, creating an immersive space for dynamic conversations linked directly to your favorite videos.
 
-
+18.Infinite Scroll 🔄: Users can now enjoy a continuous flow of content without having to manually click "Load More." The infinite scroll feature dynamically loads more videos as you reach the bottom of the page, ensuring a smooth and uninterrupted browsing experience.
 
 ## Demo Link - 
 https://you-tube-clone-cyan.vercel.app
